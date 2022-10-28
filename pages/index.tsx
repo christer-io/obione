@@ -33,7 +33,7 @@ export default function Home ({ posts }: Props) {
 
       <div className='text-3xl text-center font-sans text-darkdarkblue pl-10'> 
       <h2>The elements of open </h2> 
-      <h3 className="text-base">The open movement is built on a set of core elements.</h3></div>
+      <h3 className="text-base">The open movement is built on a set of core elements</h3></div>
       {/* posts */}
      
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6 p-2 md:p-6">
