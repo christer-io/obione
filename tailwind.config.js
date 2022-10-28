@@ -1,4 +1,3 @@
-/** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
     './pages/**/*.{js,ts,jsx,tsx}',
@@ -8,4 +7,32 @@ module.exports = {
     extend: {},
   },
   plugins: [],
+  theme: {
+    colors: {
+      transparent: 'transparent',
+      current: 'currentColor',
+      'white': '#ffffff',
+      'blue': '#4D8FE4',
+      "blueprimary": "#3F51B5",
+      "purple": "#524DCC",
+      "midblue": "#3E7CB1",
+      "orange": "#914c05",
+      "red": "#910549",
+      'buttonblue': '#4267B2',
+      'darkblue': '#303F9F',
+      'darkdarkblue': '#054A91',
+      'maxdarkblue': '#061629',
+      'midnight': '#121063',
+      'gray': '#808080',
+      'grayish': '#6F7E8C', 
+      "darkgray": "#161E33",
+      'lightgray': '#E5E5E5',
+      'lightlightgray': '#fafafa',
+      'green': '#4CAF50',
+      'darkgreen': '#285D34',
+      'darkgreen2': '#4F772D',
+      "darkestgreen": "#132A13",
+      "black": "#000000",
+    },
+  },
 }
