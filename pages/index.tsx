@@ -3,7 +3,7 @@ import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
 import Footer from '../components/Footer';
-
+import BannerSmall from '../components/BannerSmall'
 import Header from '../components/Header';
 import Banner from '../components/Banner';
 import { sanityClient, urlFor } from "../sanity";
@@ -54,7 +54,8 @@ export default function Home ({ posts }: Props) {
         ))}
       </div>
     
-          
+    <BannerSmall part1="Open source" part2="a development methodology" part3="and a social movement!" />
+           
     </div>
     <Footer />
     </div>
