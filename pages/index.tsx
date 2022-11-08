@@ -20,7 +20,7 @@ export default function Home ({ posts }: Props) {
   console.log(posts);
   return (
     <div className="">
-    <div className="max-w-7xl mx-auto">
+   
       <Head>
         <title>ObiOne</title>
         <link rel="icon" href="/favicon.ico" />
@@ -29,6 +29,7 @@ export default function Home ({ posts }: Props) {
         <meta name="description" content="Open source, open data, open education and digital public goods"></meta>
       </Head>
       <Header />
+      <div className="max-w-7xl mx-auto">
       <Banner part1="Open source is a methodology" part2="and a social movement!" subtext="With an open philosofy and metodology we can solve the global grand challanges in more effective, transparent and democratic ways."/>
 
       <div className='text-3xl text-center font-sans text-darkdarkblue pl-10'> 
