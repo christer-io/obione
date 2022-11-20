@@ -9,7 +9,7 @@ function Banner({ part1, part2, subtext }) {
          ObiOne.io
     </h2>
     <div className="px-5 space-y-5 ">
-      <h1 className="pl-10 pr-10 text-4xl sm:text-6xl xl:text-6xl font-sans">
+      <h1 className="pl-10 pr-10 text-4xl sm:text-6xl xl:text-8xl font-sans">
         <span className="decoration-4 text-darkdarkblue "> {part1} 
         </span>{" "} {part2}</h1>
     
