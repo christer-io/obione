@@ -83,7 +83,7 @@ export default function Home ({ posts, technical, external   }: Props) {
       <section className='bg-white'>
           <div className='max-w-7xl mx-auto  text-3xl text-center font-sans text-darkdarkblue pt-9' >
             <h2>The nerdy section</h2> 
-            <h3 className="text-base pb-2">Myth busting, important details and texts about the more difficult topics</h3>
+            <h3 className="text-base pb-2">Myth busting, important details and texts about the more difficult topics.</h3>
           <div/>
           <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-3 pl-3 pr-3 pt-5 pb-8">
             {technical.map((post) => (
