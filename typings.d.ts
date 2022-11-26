@@ -6,5 +6,6 @@ export interface Post {
     slug: slug;
     mainImage: string;
     description: string;
+    url: string;
     
 }

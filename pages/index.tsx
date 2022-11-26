@@ -9,16 +9,20 @@ import Banner from '../components/Banner';
 import { sanityClient, urlFor } from "../sanity";
 import { Post } from '../typings';
 import Textcard from '../components/Textcard';
+import Externallink from '../components/Externallink';
 
 import StandardButton from '../components/StandardButton';
 
 
 interface Props {
   posts: [Post];
-  technical: [Post]
+  technical: [Post];
+  external: [Post];
+  
+
 }
 
-export default function Home ({ posts, technical   }: Props) {
+export default function Home ({ posts, technical, external   }: Props) {
   console.log(posts);
   return (
     <div className="">
@@ -56,7 +60,26 @@ export default function Home ({ posts, technical   }: Props) {
           </Link>
         ))}
       </div>
-    
+      <section className='bg-white'>
+          <div className='max-w-7xl mx-auto  text-3xl text-center font-sans text-darkdarkblue pt-9' >
+            <h2>Usefull resource</h2> 
+            <h3 className="text-base pb-2">Organisations and websites with relevant information</h3>
+          <div/>
+          <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-3 pl-3 pr-3 pt-5 pb-8">
+            {external.map((post) => (
+                <Externallink
+                key={post._id}
+                postid={post.mainImage}
+                img={post.mainImage} 
+                title={post.title} 
+                url={post.url}
+                description={post.description} 
+                />
+              ))}
+            </div>  
+            
+          </div>
+       </section>
       <section className='bg-white'>
           <div className='max-w-7xl mx-auto  text-3xl text-center font-sans text-darkdarkblue pt-9' >
             <h2>The nerdy section</h2> 
@@ -93,10 +116,14 @@ export const getServerSideProps = async () => {
   const techquery = `*[_type == "post" && tag =="technical"]{_id, title, mainImage, body, slug, description}`
   const technical = await sanityClient.fetch(techquery);
 
+  const externalquery = `*[_type == "post" && tag =="external"]{_id, title, mainImage, body, slug, description, url}`
+  const external = await sanityClient.fetch(externalquery);
+
   return {
     props: {
       posts,
       technical,
+      external,
     }
   }
 };
