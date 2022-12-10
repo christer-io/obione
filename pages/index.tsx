@@ -10,6 +10,7 @@ import { sanityClient, urlFor } from "../sanity";
 import { Post } from '../typings';
 import Textcard from '../components/Textcard';
 import Externallink from '../components/Externallink';
+import Questions from '../components/Questions';
 
 import StandardButton from '../components/StandardButton';
 
@@ -18,11 +19,12 @@ interface Props {
   posts: [Post];
   technical: [Post];
   external: [Post];
+  question: [Post];
   
 
 }
 
-export default function Home ({ posts, technical, external   }: Props) {
+export default function Home ({ posts, technical, external, question  }: Props) {
   console.log(posts);
   return (
     <div className="">
@@ -100,7 +102,25 @@ export default function Home ({ posts, technical, external   }: Props) {
             
           </div>
        </section>
-
+       <section className='bg-white'>
+          <div className='max-w-7xl mx-auto  text-3xl text-center font-sans text-darkdarkblue pt-9' >
+            <h2>FAQ</h2> 
+            <h3 className="text-base pb-2">Questions about open that I often get asked.</h3>
+          <div/>
+          <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-3 pl-3 pr-3 pt-5 pb-8">
+            {question.map((post) => (
+                <Questions
+                key={post._id}
+                postid={post.slug}
+                title={post.title} 
+                url={post.slug.current}
+                
+                />
+              ))}
+            </div>  
+            
+          </div>
+       </section>        
     <BannerSmall part1="Open source" part2="a development methodology" part3="and a social movement!" />
            
     </div>
@@ -116,14 +136,18 @@ export const getServerSideProps = async () => {
   const techquery = `*[_type == "post" && tag =="technical"]{_id, title, mainImage, body, slug, description}`
   const technical = await sanityClient.fetch(techquery);
 
-  const externalquery = `*[_type == "post" && tag =="external"]{_id, title, mainImage, body, slug, description, url}`
-  const external = await sanityClient.fetch(externalquery);
+  const externalresource = `*[_type == "externalresource" && tag =="external"]{_id, title, slug, description, url}`
+  const external = await sanityClient.fetch(externalresource);
+
+  const faq = `*[_type == "question" && tag =="opensource"]{_id, title, slug, body}`
+  const question = await sanityClient.fetch(faq);
 
   return {
     props: {
       posts,
       technical,
       external,
+      question,
     }
   }
 };

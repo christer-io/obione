@@ -5,7 +5,7 @@ import StandardButton from "./StandardButton"
 function Banner({ part1, part2, subtext }) {
   return (
   <div className="max-w-5xl mx-auto  text-blue text-center pt-10 pb-10">
-    <h2 className="pl-10 pr-10 pt-3 text-darkdarkblue text-center text-xl pt-3 pb-3">
+    <h2 className="pl-10 pr-10 pt-3 text-darkdarkblue text-center text-2xl pt-3 pb-3">
          ObiOne.io
     </h2>
     <div className="px-5 space-y-5 ">
