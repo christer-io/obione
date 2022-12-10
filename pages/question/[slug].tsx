@@ -7,10 +7,10 @@ import { ChildProcess, ChildProcessWithoutNullStreams } from "child_process";
 import Head from "next/head";
 
 interface Props {
-    post: Post;
+    faq: Post;
 }
 
-function Question({ post }: Props) {
+function Question({ faq }: Props) {
     return (
     <main>
         <Head>
@@ -30,14 +30,14 @@ function Question({ post }: Props) {
         */} 
         <article className="max-w-3xl mx-auto p-5">
             <h1 className="text-3xl mt-10 mb-3">
-               {post.title} 
+               {faq.title} 
             </h1>
             
             <PortableText 
             className="mt-10"
             dataset={process.env.NEXT_PUBLIC_SANITY_DATASET!}
             projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!}
-            content={post.body}
+            content={faq.body}
             serializers={{
                 h1: (props: any) => (
                     <h1 className="text-4xl font-sans my-3 text-darkdarkblue" {...props} />
@@ -104,11 +104,11 @@ export const getStaticPaths = async () => {
         body,
           }`
 
-          const post = await sanityClient.fetch(query, {
+          const faq = await sanityClient.fetch(query, {
               slug: params?.slug,
           })
 
-          if (!post) {
+          if (!faq) {
               return {
                   notFound: true
               }
@@ -116,7 +116,7 @@ export const getStaticPaths = async () => {
 
           return {
               props: {
-                  post,
+                  faq,
               },
               revalidate: 600,
           };
