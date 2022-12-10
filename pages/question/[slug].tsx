@@ -96,7 +96,7 @@ export const getStaticPaths = async () => {
   };
 
   export const getStaticProps: GetStaticProps = async ({params}) => {
-    const query = `*[_type == "question" && slug.current == $slug][0]{
+    const query2 = `*[_type == "question" && slug.current == $slug][0]{
         _id, 
         _createdAt,
         slug,
@@ -104,7 +104,7 @@ export const getStaticPaths = async () => {
         body,
           }`
 
-          const faq = await sanityClient.fetch(query, {
+          const faq = await sanityClient.fetch(query2, {
               slug: params?.slug,
           })
 
