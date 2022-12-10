@@ -10,7 +10,7 @@ interface Props {
     post: Post;
 }
 
-function Post({ post }: Props) {
+function Question({ post }: Props) {
     return (
     <main>
         <Head>
@@ -70,7 +70,7 @@ function Post({ post }: Props) {
   )
 }
 
-export default Post;
+export default Question;
 
 export const getStaticPaths = async () => {
     const query = `*[_type == "post"]{
