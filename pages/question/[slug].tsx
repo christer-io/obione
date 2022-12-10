@@ -73,7 +73,7 @@ function Question({ faq }: Props) {
 export default Question;
 
 export const getStaticPaths = async () => {
-    const query = `*[_type == "post"]{
+    const query = `*[_type == "question"]{
         _id, 
         slug {
             current
