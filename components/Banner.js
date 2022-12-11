@@ -17,8 +17,8 @@ function Banner({ part1, part2, subtext }) {
          {subtext}
         </h2>
         <div className="flex justify-center space-x-3 pt-5 pb-5 pl-5">
-          <StandardButton buttontext="Open for dummies" url="https://obione-3mdf.vercel.app/post/open-source"/>
-          <StandardButton buttontext="Open policy" url="https://obione-3mdf.vercel.app/post/open-source"/>  
+          <StandardButton buttontext="Open for dummies" url="/post/open-source"/>
+          <StandardButton buttontext="Open policy" url="/post/open-source"/>  
         </div>
      
     </div> 

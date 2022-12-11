@@ -140,7 +140,7 @@ export const getServerSideProps = async () => {
   const externalresource = `*[_type == "externalresource" && tag =="external"]{_id, title, slug, description, url}`
   const external = await sanityClient.fetch(externalresource);
 
-  const faq = `*[_type == "question" && tag =="opensource"]{_id, title, slug, body}`
+  const faq = `*[_type == "question" && tag =="opensource"]{_id, title, slug, body, license, source}`
   const question = await sanityClient.fetch(faq);
 
   return {

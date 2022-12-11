@@ -7,5 +7,7 @@ export interface Post {
     mainImage: string;
     description: string;
     url: string;
+    license: string;
+    source: string;
     
 }

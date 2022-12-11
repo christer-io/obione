@@ -19,6 +19,16 @@ export default {
       type: 'string',
     },
     {
+      name: 'source',
+      title: 'Source',
+      type: 'string',
+    },
+    {
+      name: 'license',
+      title: 'License',
+      type: 'string',
+    },
+    {
       name: 'url',
       title: 'URL',
       type: 'string',

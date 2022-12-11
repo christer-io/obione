@@ -5,6 +5,7 @@ import Header from "../../components/Header";
 import PortableText from "react-portable-text"
 import { ChildProcess, ChildProcessWithoutNullStreams } from "child_process";
 import Head from "next/head";
+import License from '../../components/License';
 
 interface Props {
     faq: Post;
@@ -59,8 +60,11 @@ function Question({ faq }: Props) {
                 }
             }
             />
+          <div className="pt-9">
+            <License  license={faq.license} source={faq.source} url="https://creativecommons.org/licenses/by-sa/4.0/"/>    
+          </div>
         </article>
-
+        
         <hr className="max-w-lg my-5 mx-auto border border-black"/>
 
     </main>
@@ -99,6 +103,8 @@ export const getStaticPaths = async () => {
         slug,
         title,
         body,
+        license,
+        source,
           }`
 
           const faq = await sanityClient.fetch(query2, {
