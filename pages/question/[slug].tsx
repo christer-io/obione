@@ -29,9 +29,6 @@ function Question({ faq }: Props) {
         alt="" />
         */} 
         <article className="max-w-3xl mx-auto p-5">
-            <h1 className="text-3xl mt-10 mb-3">
-               {faq.title} 
-            </h1>
             
             <PortableText 
             className="mt-10"
