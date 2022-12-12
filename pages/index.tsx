@@ -38,7 +38,7 @@ export default function Home ({ posts, technical, external, question  }: Props) 
       </Head>
       <Header />
       <div className="max-w-7xl mx-auto">
-      <Banner part1="Be the change" part2="that inspires change!" subtext="With an open philosofy and metodology we can solve the global grand challanges in more effective, transparent and democratic ways."/>
+      <Banner part1="Be the change" part2="that inspires change!" subtext="With an open philosophy and methodology we can solve the global grand challenges in more effective, transparent and democratic ways."/>
 
       <div className='text-3xl text-center font-sans text-darkdarkblue pl-10'> 
       <h2>The elements of open </h2> 
@@ -67,7 +67,7 @@ export default function Home ({ posts, technical, external, question  }: Props) 
             <h2>FAQ</h2> 
             <h3 className="text-base pb-2">Questions and answers intended to help people understand "open".</h3>
           <div/>
-          <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-3 pl-3 pr-3 pt-5 pb-8">
+          <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-3 pl-3 pr-3 pt-5 pb-4">
             {question.map((post) => (
                 <Questions
                 key={post._id}
@@ -78,7 +78,10 @@ export default function Home ({ posts, technical, external, question  }: Props) 
                 />
               ))}
             </div>  
-            
+            <div>
+            <h3 className="text-center text-base pb-2"> <a href="/faq/">Explore more FAQs &rarr; </a></h3>
+        
+            </div>
           </div>
        </section>
       <section className='bg-white'>
@@ -121,7 +124,7 @@ export default function Home ({ posts, technical, external, question  }: Props) 
             
           </div>
        </section>        
-    <BannerSmall part1="Open source" part2="a development methodology" part3="and a social movement!" />
+    <BannerSmall part1="Open source is " part2="a development methodology" part3="and a social movement!" />
            
     </div>
     <Footer />

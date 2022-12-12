@@ -9,7 +9,7 @@ function Questions({postid, url, title}) {
           <div className="flex justify-between p-5 bg-white">
             <div>
               <p className="text-lg font-bold text-black text-left">{title}</p>
-              <p className="text-sm font-light text-darkdarkblue pt-5 text-left">Learn more</p>     
+              <p className="text-lg font-light text-darkdarkblue pt-5 pr-2 text-right"> &rarr;</p>     
             </div>
           </div>
         </div>

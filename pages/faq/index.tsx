@@ -41,7 +41,7 @@ export default function Home ({ posts, opencontent, external, question, opendata
       
       <section className='bg-white'>
           <div className='max-w-7xl mx-auto  text-3xl text-center font-sans text-darkdarkblue pt-9' >
-            <h2>FAQ - Open Source</h2> 
+            <h2>FAQ - Open Source </h2> 
             <h3 className="text-base pb-2">Questions and answers intended to help people understand open source.</h3>
           <div/>
           <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-3 pl-3 pr-3 pt-5 pb-8">
@@ -96,7 +96,25 @@ export default function Home ({ posts, opencontent, external, question, opendata
             
           </div>
        </section>
-           
+       <section className='bg-white'>
+          <div className='max-w-7xl mx-auto  text-3xl text-center font-sans text-darkdarkblue pt-9' >
+            <h2>FAQ - Open standards</h2> 
+            <h3 className="text-base pb-2">Questions and answers intended to help people understand open standards.</h3>
+          <div/>
+          <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-3 pl-3 pr-3 pt-5 pb-8">
+            {posts.map((post) => (
+                <Questions
+                key={post._id}
+                postid={post.slug}
+                title={post.title} 
+                url={post.slug.current}
+                
+                />
+              ))}
+            </div>  
+            
+          </div>
+       </section>   
         
     </div>
     <Footer />
@@ -105,7 +123,7 @@ export default function Home ({ posts, opencontent, external, question, opendata
 };
 
 export const getServerSideProps = async () => {
-  const query = `*[_type == "post" && tag =="featured"]{_id, title, description, mainImage, body, slug}`
+  const query = `*[_type == "question" && tag =="openstandard"]{_id, title, body, slug, license, source}`
   const posts = await sanityClient.fetch(query);
 
   const opencontentquery = `*[_type == "question" && tag =="opencontent"]{_id, title, body, slug, license, source}`
