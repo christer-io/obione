@@ -114,7 +114,6 @@ export const getStaticPaths = async () => {
                   notFound: true
               }
           }
-
           return {
               props: {
                   post,

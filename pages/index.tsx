@@ -65,7 +65,7 @@ export default function Home ({ posts, technical, external, question  }: Props) 
       <section className='bg-white'>
           <div className='max-w-7xl mx-auto  text-3xl text-center font-sans text-darkdarkblue pt-9' >
             <h2>FAQ</h2> 
-            <h3 className="text-base pb-2">Questions about open that I often get asked.</h3>
+            <h3 className="text-base pb-2">Questions and answers intended to help people understand "open".</h3>
           <div/>
           <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-3 pl-3 pr-3 pt-5 pb-8">
             {question.map((post) => (
@@ -88,14 +88,13 @@ export default function Home ({ posts, technical, external, question  }: Props) 
           <div/>
           <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-3 pl-3 pr-3 pt-5 pb-8">
             {technical.map((post) => (
-                <Textcard
-                key={post._id}
-                postid={post.mainImage}
-                img={post.mainImage} 
-                title={post.title} 
-                url={post.slug.current}
-                description={post.description} 
-                />
+               <Questions
+               key={post._id}
+               postid={post.slug}
+               title={post.title} 
+               url={post.slug.current}
+               
+               />
               ))}
             </div>  
             
@@ -104,8 +103,8 @@ export default function Home ({ posts, technical, external, question  }: Props) 
       
        <section className='bg-white'>
           <div className='max-w-7xl mx-auto  text-3xl text-center font-sans text-darkdarkblue pt-9' >
-            <h2>Usefull resource</h2> 
-            <h3 className="text-base pb-2">Organisations and websites with relevant information</h3>
+            <h2>Usefull Resources</h2> 
+            <h3 className="text-base pb-2">Other organisations and websites with relevant information</h3>
           <div/>
           <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-3 pl-3 pr-3 pt-5 pb-8">
             {external.map((post) => (
@@ -134,7 +133,7 @@ export const getServerSideProps = async () => {
   const query = `*[_type == "post" && tag =="featured"]{_id, title, description, mainImage, body, slug}`
   const posts = await sanityClient.fetch(query);
 
-  const techquery = `*[_type == "post" && tag =="technical"]{_id, title, mainImage, body, slug, description}`
+  const techquery = `*[_type == "question" && tag =="nerd"]{_id, title, slug, body, license, source}`
   const technical = await sanityClient.fetch(techquery);
 
   const externalresource = `*[_type == "externalresource" && tag =="external"]{_id, title, slug, description, url}`

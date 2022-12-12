@@ -31,7 +31,7 @@ function License({source, license, url}) {
         <div className="border text-white border-lightgray rounded-lg group cursor-pointer overflow-hidden">
           <div className="flex justify-between p-5 bg-white">
             <div>
-              <p className="text-sm font-bold text-black text-left">Text from: {source}</p>
+              <p className="text-sm text-black text-left">Source: {source}</p>
               <p className="text-sm text-darkgray pt-2 font-light text-left">License: {license}</p>      
             </div>
           </div>
