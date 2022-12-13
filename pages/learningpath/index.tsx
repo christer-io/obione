@@ -37,9 +37,8 @@ export default function Home ({ posts, opencontent, external, question, opendata
         <meta name="description" content="Open source, open data, open education and digital public goods"></meta>
       </Head>
       <Header />
-      <div className="max-w-5xl mx-auto pt-9 pb-9">
-      <iframe src="https://digitallibrary.io/wp-admin/admin-ajax.php?action=h5p_embed&id=840" height="800" width="500" title="Iframe Example"></iframe>
-      
+      <div className="h-screen max-w-3xl mx-auto pt-9 pb-9">
+        <iframe className="h-full w-full" src="https://digitallibrary.io/wp-admin/admin-ajax.php?action=h5p_embed&id=840"  title="Open source"></iframe>
         
       </div>
     
