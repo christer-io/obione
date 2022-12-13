@@ -11,6 +11,7 @@ import post from './post'
 import author from './author'
 import question from './question'
 import externalresource from './externalresource'
+import path from './path'
 
 
 
@@ -28,6 +29,7 @@ export default createSchema({
     category,
     question,
     externalresource,
+    path,
     // When added to this list, object types can be used as
     // { type: 'typename' } in other document schemas
     blockContent,

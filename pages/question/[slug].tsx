@@ -117,6 +117,7 @@ export const getStaticPaths = async () => {
               }
           }
 
+          
           return {
               props: {
                   faq,

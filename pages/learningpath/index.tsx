@@ -11,21 +11,18 @@ import { Post } from '../../typings';
 import Textcard from '../../components/Textcard';
 import Externallink from '../../components/Externallink';
 import Questions from '../../components/Questions';
+import Path from '../../components/Path';
 
 import StandardButton from '../../components/StandardButton';
 
 
 interface Props {
-  posts: [Post];
-  opencontent: [Post];
-  external: [Post];
   question: [Post];
-  opendata: [Post];
 
 }
 
-export default function Home ({ posts, opencontent, external, question, opendata  }: Props) {
-  console.log(posts);
+export default function Home ({ question }: Props) {
+ 
   return (
     <div className="">
    
@@ -37,37 +34,42 @@ export default function Home ({ posts, opencontent, external, question, opendata
         <meta name="description" content="Open source, open data, open education and digital public goods"></meta>
       </Head>
       <Header />
-      <div className="h-screen max-w-3xl mx-auto pt-9 pb-9">
-        <iframe className="h-full w-full" src="https://digitallibrary.io/wp-admin/admin-ajax.php?action=h5p_embed&id=840"  title="Open source"></iframe>
+      <div className="max-w-7xl mx-auto pt-9">
+      
+      <section className='bg-white'>
+          <div className='max-w-7xl mx-auto  text-3xl text-center font-sans text-darkdarkblue pt-9' >
+            <h2>Mini Courses </h2> 
+            <h3 className="text-base pb-2">Micro learning paths covering open core subjects.</h3>
+          <div/>
+          <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-3 pl-3 pr-3 pt-5 pb-8">
+            {question.map((post) => (
+                <Path
+                key={post._id}
+                postid={post.slug}
+                title={post.title} 
+                url={post.slug.current}
+                
+                />
+              ))}
+            </div>  
+            
+          </div>
+       </section>
+  
         
-      </div>
+    </div>
     
     </div>
   )
 };
 
 export const getServerSideProps = async () => {
-  const query = `*[_type == "question" && tag =="openstandard"]{_id, title, body, slug, license, source}`
-  const posts = await sanityClient.fetch(query);
 
-  const opencontentquery = `*[_type == "question" && tag =="opencontent"]{_id, title, body, slug, license, source}`
-  const opencontent = await sanityClient.fetch(opencontentquery);
-
-  const opendataquery = `*[_type == "question" && tag =="opendata"]{_id, title, body, slug, license, source}`
-  const opendata = await sanityClient.fetch(opendataquery);
-
-  const externalresource = `*[_type == "externalresource" && tag =="external"]{_id, title, slug, description, url}`
-  const external = await sanityClient.fetch(externalresource);
-
-  const faq = `*[_type == "question" && tag =="opensource"]{_id, title, slug, body, license, source}`
+  const faq = `*[_type == "path" && tag =="open"]{_id, title, slug, body, url}`
   const question = await sanityClient.fetch(faq);
 
   return {
     props: {
-      posts,
-      opencontent,
-      external,
-      opendata,
       question,
     }
   }
