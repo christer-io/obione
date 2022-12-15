@@ -41,7 +41,7 @@ export default function Home ({ posts, technical, external, question  }: Props) 
       <div className="max-w-7xl mx-auto">
       <Banner part1="Be the change" part2="that inspires change!" subtext="With an open philosophy and methodology we can solve the global grand challenges in more effective, transparent and democratic ways."/>
 
-      <div className='text-3xl text-center font-sans text-darkdarkblue pl-10'> 
+      <div className='text-3xl text-center font-sans text-darkdarkblue '> 
       <h2>The elements of open </h2> 
       <h3 className="text-base">The open movement is built on a set of core elements</h3></div>
       {/* posts */}
@@ -64,7 +64,7 @@ export default function Home ({ posts, technical, external, question  }: Props) 
         ))}
       </div>
       <section className='bg-white'>
-          <div className='max-w-7xl mx-auto  text-3xl text-center font-sans text-darkdarkblue pt-9' >
+          <div className='max-w-7xl mx-auto text-3xl text-center font-sans text-darkdarkblue pt-9' >
             <h2>FAQ</h2> 
             <h3 className="text-base pb-2">Questions and answers intended to help people understand "open".</h3>
           <div/>
