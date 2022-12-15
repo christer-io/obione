@@ -11,6 +11,7 @@ import { Post } from '../typings';
 import Textcard from '../components/Textcard';
 import Externallink from '../components/Externallink';
 import Questions from '../components/Questions';
+import Footermobile from '../components/Footermobile';
 
 import StandardButton from '../components/StandardButton';
 
@@ -128,6 +129,7 @@ export default function Home ({ posts, technical, external, question  }: Props) 
            
     </div>
     <Footer />
+    <Footermobile />
     </div>
   )
 };
