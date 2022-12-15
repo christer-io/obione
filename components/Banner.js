@@ -9,11 +9,11 @@ function Banner({ part1, part2, subtext }) {
          ObiOne.io
     </h2>
     <div className="px-5 space-y-5 ">
-      <h1 className="pl-10 pr-10 text-4xl sm:text-6xl xl:text-8xl font-sans">
+      <h1 className="pl-5 ms:pl-10 pr-5 ms:pr-10 text-4xl sm:text-6xl xl:text-8xl font-sans">
         <span className="decoration-4 text-darkdarkblue "> {part1} 
         </span>{" "} {part2}</h1>
     
-        <h2 className=" text-darkdarkblue text-center pl-12 pr-12 xl:text-2xl">
+        <h2 className=" text-darkdarkblue text-center pl-5 ms:pl-12 pr-5 ms:pr-12 xl:text-2xl">
          {subtext}
         </h2>
         <div className="flex justify-center space-x-3 pt-5 pb-5 pl-5">
