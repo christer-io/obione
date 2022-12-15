@@ -21,7 +21,7 @@ function Post({ post }: Props) {
             <meta name="description" content="Open source, open data, open education and digital public goods"></meta>
         </Head>
 
-        <Header />
+        <Header  />
 
          {/* posts <img 
         className="w-full h-40 object-cover"

@@ -45,7 +45,7 @@ export default function Home ({ posts, technical, external, question  }: Props) 
       <h3 className="text-base">The open movement is built on a set of core elements</h3></div>
       {/* posts */}
      
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6 p-2 md:p-6">
+      <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6 p-2 md:p-6">
         {posts.map((post) => (
           <Link key={post._id} href={`/post/${post.slug.current}`}>
             <div className="border text-wihte border-lightgray rounded-lg group cursor-pointer overflow-hidden">

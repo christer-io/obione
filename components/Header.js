@@ -4,7 +4,7 @@ import AccountMenu from "./Menu"
 
 function Header() {
   return (
-    <header className="flex justify-between p-3 mx-auto shadow-md">
+    <header className="sticky flex justify-between p-3 mx-auto shadow-md">
         <div className="flex items-center space-x-5">
             <Link href="/">
                 <h1 className="text-3xl pl-3 cursor-pointer font-sans font-bold text-blue">Obi<span className="text-darkdarkblue">One.io</span></h1>
