@@ -50,9 +50,9 @@ export default function Home ({ posts, technical, external, question  }: Props) 
           <Link key={post._id} href={`/post/${post.slug.current}`}>
             <div className="border text-wihte border-lightgray rounded-lg group cursor-pointer overflow-hidden">
               <img className="h-40 lg:h-60 w-full object-cover group-hover:scale-105 transition-transform duration-200 ease-in-out" src={urlFor(post.mainImage).url()!} alt={post.title} />
-              <div className="flex justify-between p-5 bg-white">
+              <div className="flex justify-between pt-5 pb-5 pl-3 lg:pl-5 bg-white">
                 <div>
-                  <p className="text-lg font-bold text-darkblue">{post.title}</p>
+                  <p className="text-sm lg:text-lg font-bold text-darkblue">{post.title}</p>
                   <p className="text-xs">
                     {post.description}
                   </p>
