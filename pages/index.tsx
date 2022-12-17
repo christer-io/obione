@@ -80,8 +80,7 @@ export default function Home ({ posts, technical, external, question  }: Props) 
               ))}
             </div>  
             <div>
-            <h3 className="text-center text-base pb-2"> <a href="/faq/">Explore more FAQs &rarr; </a></h3>
-        
+              <h3 className="text-center text-base pb-2"> <a href="/faq/">Explore more FAQs (50+) &rarr; </a></h3>
             </div>
           </div>
        </section>
@@ -103,10 +102,12 @@ export default function Home ({ posts, technical, external, question  }: Props) 
                 />
               ))}
             </div>  
-            
+            <div>
+              <h3 className="text-center text-base pb-2"> <a href="/faq/">Explore more resources (20+) &rarr; </a></h3>
+            </div>
           </div>
     
-          <h3 className="text-center text-base pb-2"> <a href="/externalresource/">Explore more resources &rarr; </a></h3>
+         
        </section>        
     
     <BannerSmall part1="Open source is " part2="a development methodology" part3="and a social movement!" />
