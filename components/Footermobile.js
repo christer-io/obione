@@ -1,4 +1,4 @@
-import { MenuIcon, SearchIcon, UserCircleIcon, AcademicCapIcon, BadgeCheckIcon } from "@heroicons/react/solid"
+import { MenuIcon, SearchIcon, UserCircleIcon, AcademicCapIcon, HomeIcon, QuestionMarkCircleIcon } from "@heroicons/react/solid"
 
 function Footermobile() {
   return (
@@ -7,10 +7,10 @@ function Footermobile() {
             <div className="grid grid-cols-3 p-2 md:px-5 "> 
                 <div className="">
                     <div className="flex justify-center">
-                        <BadgeCheckIcon className="h-6 fill-gray-500 "/>
+                        <HomeIcon className="h-6 fill-gray-500 "/>
                     </div>  
                     <div className="flex justify-center">    
-                        <h3 className="text-xs font-light">Badges</h3>
+                        <h3 className="text-xs font-light">Home</h3>
                     </div>   
                 </div>
                 <div className="">
@@ -23,10 +23,10 @@ function Footermobile() {
                 </div>
                 <div className="">
                     <div className="flex justify-center">
-                        <SearchIcon className="h-6 fill-gray-500 "/>
+                        <QuestionMarkCircleIcon className="h-6 fill-gray-500 "/>
                     </div>  
                     <div className="flex justify-center">    
-                        <h3 className="text-xs font-light">Search</h3>
+                        <h3 className="text-xs font-light">FAQ</h3>
                     </div>   
                 </div>
                
