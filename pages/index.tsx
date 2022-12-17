@@ -85,29 +85,10 @@ export default function Home ({ posts, technical, external, question  }: Props) 
             </div>
           </div>
        </section>
-      <section className='bg-white'>
-          <div className='max-w-7xl mx-auto  text-3xl text-center font-sans text-darkdarkblue pt-9' >
-            <h2>The nerdy section</h2> 
-            <h3 className="text-base pb-2">Myth busting, important details and texts about the more difficult topics.</h3>
-          <div/>
-          <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-3 pl-3 pr-3 pt-5 pb-8">
-            {technical.map((post) => (
-               <Questions
-               key={post._id}
-               postid={post.slug}
-               title={post.title} 
-               url={post.slug.current}
-               
-               />
-              ))}
-            </div>  
-            
-          </div>
-       </section>
       
        <section className='bg-white'>
           <div className='max-w-7xl mx-auto  text-3xl text-center font-sans text-darkdarkblue pt-9' >
-            <h2>Usefull Resources</h2> 
+            <h2>Other Resources</h2> 
             <h3 className="text-base pb-2">Other organisations and websites with relevant information</h3>
           <div/>
           <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-3 pl-3 pr-3 pt-5 pb-8">
@@ -124,7 +105,10 @@ export default function Home ({ posts, technical, external, question  }: Props) 
             </div>  
             
           </div>
+    
+          <h3 className="text-center text-base pb-2"> <a href="/externalresource/">Explore more resources &rarr; </a></h3>
        </section>        
+    
     <BannerSmall part1="Open source is " part2="a development methodology" part3="and a social movement!" />
            
     </div>
@@ -141,10 +125,10 @@ export const getServerSideProps = async () => {
   const techquery = `*[_type == "question" && tag =="nerd"]{_id, title, slug, body, license, source}`
   const technical = await sanityClient.fetch(techquery);
 
-  const externalresource = `*[_type == "externalresource" && tag =="external"]{_id, title, slug, description, url}`
+  const externalresource = `*[_type == "externalresource" && tag =="external" && featured =="yes"]{_id, title, slug, description, url}`
   const external = await sanityClient.fetch(externalresource);
 
-  const faq = `*[_type == "question" && tag =="opensource"]{_id, title, slug, body, license, source}`
+  const faq = `*[_type == "question" && tag =="opensource" && featured =="yes"]{_id, title, slug, body, license, source}`
   const question = await sanityClient.fetch(faq);
 
   return {

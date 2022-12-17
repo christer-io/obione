@@ -19,6 +19,11 @@ export default {
       type: 'string',
     },
     {
+      name: 'featured',
+      title: 'Featured',
+      type: 'string',
+    },
+    {
       name: 'url',
       title: 'URL',
       type: 'string',

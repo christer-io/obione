@@ -9,7 +9,7 @@ function Banner({ part1, part2, subtext }) {
          ObiOne.io
     </h2>
     <div className="px-5 space-y-5 ">
-      <h1 className="pl-5 ms:pl-10 pr-5 ms:pr-10 text-4xl sm:text-6xl xl:text-8xl font-sans">
+      <h1 className="pl-5 ms:pl-10 pr-5 ms:pr-10 text-4xl sm:text-7xl xl:text-8xl font-sans">
         <span className="decoration-4 text-darkdarkblue "> {part1} 
         </span>{" "} {part2}</h1>
     
@@ -17,8 +17,8 @@ function Banner({ part1, part2, subtext }) {
          {subtext}
         </h2>
         <div className="flex justify-center space-x-3 pt-5 pb-5 pl-5">
-          <StandardButton buttontext="Open for dummies" url="/post/open-source"/>
-          <StandardButton buttontext="Open policy" url="/post/open-source"/>  
+          <StandardButton buttontext="Open - to solve grand challanges" url="/post/opensource"/>
+          
         </div>
      
     </div> 
