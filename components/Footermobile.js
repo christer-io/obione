@@ -11,7 +11,7 @@ function Footermobile() {
                    
                     <div className="flex justify-center">
                     <Link href="/"> 
-                        <HomeIcon className="h-6 fill-gray-500 "/>
+                        <HomeIcon className="h-6 fill-darkdarkblue "/>
                     </Link>
                     </div>  
                     <div className="flex justify-center">    
@@ -26,7 +26,7 @@ function Footermobile() {
                 <div className="">
                     <div className="flex justify-center">
                     <Link href="/learningpath/">
-                        <AcademicCapIcon className="h-6 fill-gray-500 "/>
+                        <AcademicCapIcon className="h-6 fill-darkdarkblue "/>
                     </Link>
                     </div>  
                     <div className="flex justify-center">   
@@ -41,7 +41,7 @@ function Footermobile() {
 
                     <div className="flex justify-center">
                     <Link href="/faq/">
-                        <QuestionMarkCircleIcon className="h-6 fill-gray-500 "/>
+                        <QuestionMarkCircleIcon className="h-6 fill-darkdarkblue "/>
                     </Link>
                     </div>  
                     <div className="flex justify-center">  

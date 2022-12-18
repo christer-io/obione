@@ -12,7 +12,7 @@ import Textcard from '../../components/Textcard';
 import Externallink from '../../components/Externallink';
 import Questions from '../../components/Questions';
 import Path from '../../components/Path';
-
+import Footermobile from '../../components/Footermobile';
 import StandardButton from '../../components/StandardButton';
 
 
@@ -58,7 +58,7 @@ export default function Home ({ question }: Props) {
   
         
     </div>
-    
+    <Footermobile />
     </div>
   )
 };

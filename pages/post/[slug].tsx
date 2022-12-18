@@ -5,6 +5,7 @@ import Header from "../../components/Header";
 import PortableText from "react-portable-text"
 import { ChildProcess, ChildProcessWithoutNullStreams } from "child_process";
 import Head from "next/head";
+import Footermobile from '../../components/Footermobile';
 
 interface Props {
     post: Post;
@@ -64,7 +65,7 @@ function Post({ post }: Props) {
             />
         </article>
 
-        <hr className="max-w-lg my-5 mx-auto border border-black"/>
+       <Footermobile />
 
     </main>
   )

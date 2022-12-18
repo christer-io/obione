@@ -13,7 +13,7 @@ function Questions({postid, url, title}) {
               <p className="text-lg font-bold text-black text-left">{title}</p>
             </div>
           </div>
-          <p className="text-lg font-light text-darkdarkblue pt-5 pr-4 pb-3 text-right">&rarr;</p> 
+          <p className="text-lg text-darkdarkblue pt-5 pr-4 pb-3 text-right">&rarr;</p> 
           
         </div>
         

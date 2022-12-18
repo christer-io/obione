@@ -103,7 +103,7 @@ export default function Home ({ posts, technical, external, question  }: Props) 
               ))}
             </div>  
             <div>
-              <h3 className="text-center text-base pb-2"> <a href="/faq/">Explore more resources (20+) &rarr; </a></h3>
+              <h3 className="text-center text-base pb-2"> <a href="/externalresource/">Explore more resources (20+) &rarr; </a></h3>
             </div>
           </div>
     

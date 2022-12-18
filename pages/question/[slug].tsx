@@ -6,6 +6,7 @@ import PortableText from "react-portable-text"
 import { ChildProcess, ChildProcessWithoutNullStreams } from "child_process";
 import Head from "next/head";
 import License from '../../components/License';
+import Footermobile from '../../components/Footermobile';
 
 interface Props {
     faq: Post;
@@ -64,8 +65,9 @@ function Question({ faq }: Props) {
             <License  license={faq.license} source={faq.source} url="https://creativecommons.org/licenses/by-sa/4.0/"/>    
           </div>
         </article>
+        <Footermobile />
         
-        <hr className="max-w-lg my-5 mx-auto border border-black"/>
+       
 
     </main>
   )
