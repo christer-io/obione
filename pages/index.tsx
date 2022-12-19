@@ -80,7 +80,7 @@ export default function Home ({ posts, technical, external, question  }: Props) 
               ))}
             </div>  
             <div>
-              <h3 className="text-center text-base pb-2"> <a href="/faq/">Explore more FAQs (50+) &rarr; </a></h3>
+              <h3 className="text-center text-base pb-2 hover:text-darkgreen"> <a href="/faq/">Explore 50+ FAQs &rarr; </a></h3>
             </div>
           </div>
        </section>
@@ -88,7 +88,7 @@ export default function Home ({ posts, technical, external, question  }: Props) 
        <section className='bg-white'>
           <div className='max-w-7xl mx-auto  text-3xl text-center font-sans text-darkdarkblue pt-9' >
             <h2>Other Resources</h2> 
-            <h3 className="text-base pb-2">Other organisations and websites with relevant information</h3>
+            <h3 className="text-base pb-2 text-darkdarkblue">Other organisations and websites with relevant information</h3>
           <div/>
           <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-3 pl-3 pr-3 pt-5 pb-8">
             {external.map((post) => (
@@ -103,7 +103,7 @@ export default function Home ({ posts, technical, external, question  }: Props) 
               ))}
             </div>  
             <div>
-              <h3 className="text-center text-base pb-2"> <a href="/externalresource/">Explore more resources (20+) &rarr; </a></h3>
+              <h3 className="text-center text-base text-darkdarkblue pb-2 hover:text-darkgreen"> <a href="/externalresource/">Explore 20+ external resources &rarr; </a></h3>
             </div>
           </div>
     

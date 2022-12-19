@@ -19,12 +19,12 @@ function Header() {
             <div className="cursor-pointer">
                 <div className="flex justify-center">
                 <Link href="/learningpath/">
-                    <AcademicCapIcon className="h-7 fill-darkdarkblue "/>
+                    <AcademicCapIcon className="h-7 fill-darkdarkblue  hover:fill-darkgreen"/>
                 </Link>
                 </div>  
                 <div className="flex justify-center">   
                 <Link href="/">
-                    <h3 className="text-xs font-light">Learn</h3>
+                    <h3 className="text-xs font-light  hover:text-darkgreen">Learn</h3>
                 </Link>
                 </div> 
               
@@ -34,12 +34,12 @@ function Header() {
 
                 <div className="flex justify-center">
                 <Link href="/faq/">
-                    <QuestionMarkCircleIcon className="h-7 fill-darkdarkblue "/>
+                    <QuestionMarkCircleIcon className="h-7 fill-darkdarkblue  hover:fill-darkgreen"/>
                 </Link>
                 </div>  
                 <div className="flex justify-center">  
-                <Link href="/">  
-                    <h3 className="text-xs font-light">FAQ</h3>
+                <Link href="/faq/">  
+                    <h3 className="text-xs font-light  hover:text-darkgreen">FAQ</h3>
                 </Link>
                 </div> 
             
