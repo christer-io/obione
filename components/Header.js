@@ -19,7 +19,7 @@ function Header() {
             <div className="cursor-pointer">
                 <div className="flex justify-center">
                 <Link href="/learningpath/">
-                    <AcademicCapIcon className="h-7 fill-darkdarkblue  hover:fill-darkgreen"/>
+                    <AcademicCapIcon className="h-7 fill-darkdarkblue  hover:fill-darkgreen" alt="Icon showing academmic symbol"/>
                 </Link>
                 </div>  
                 <div className="flex justify-center">   
@@ -34,7 +34,7 @@ function Header() {
 
                 <div className="flex justify-center">
                 <Link href="/faq/">
-                    <QuestionMarkCircleIcon className="h-7 fill-darkdarkblue  hover:fill-darkgreen"/>
+                    <QuestionMarkCircleIcon className="h-7 fill-darkdarkblue  hover:fill-darkgreen" alt="Icon showing question mark"/>
                 </Link>
                 </div>  
                 <div className="flex justify-center">  

@@ -5,7 +5,7 @@ import { sanityClient, urlFor } from "../sanity";
 function Smallcard({img, topic, url}) {
   return (
     <Link key={img} href={url}>
-    <div className="m-1 shadow-md lg:m-2 border border-spacing-2 cursor-pointer bg-white p-2 ">
+    <div className="m-1 shadow-md lg:m-2 border hover:text-hover border-spacing-2 cursor-pointer bg-white p-2 ">
       <div className="">
           <div className="relative h-16 md:h-24 w-16 md:w-24">
             {/* <Image src={img} layout="fill" className="" alt={topic}/>  */} 

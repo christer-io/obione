@@ -5,7 +5,7 @@ import { sanityClient, urlFor } from "../sanity";
 function Externallink({img, postid, url, title, description}) {
     return (
         <Link key={postid} href={url} target="_blank" >
-        <div className="border text-black hover:text-darkgreen border-lightgray rounded-lg group cursor-pointer overflow-hidden">
+        <div className="border text-black hover:text-hover border-lightgray rounded-lg group cursor-pointer overflow-hidden">
           <div className="flex justify-between p-5 bg-white">
             <div>
               <p className="text-lg font-bold text-left">{title}</p>

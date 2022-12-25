@@ -80,7 +80,7 @@ export default function Home ({ posts, technical, external, question  }: Props) 
               ))}
             </div>  
             <div>
-              <h3 className="text-center text-base pb-2 hover:text-darkgreen"> <a href="/faq/">Explore 50+ FAQs &rarr; </a></h3>
+              <h3 className="text-center text-base pb-2 hover:text-hover"> <a href="/faq/">Explore 50+ FAQs &rarr; </a></h3>
             </div>
           </div>
        </section>
@@ -103,7 +103,7 @@ export default function Home ({ posts, technical, external, question  }: Props) 
               ))}
             </div>  
             <div>
-              <h3 className="text-center text-base text-darkdarkblue pb-2 hover:text-darkgreen"> <a href="/externalresource/">Explore 20+ external resources &rarr; </a></h3>
+              <h3 className="text-center text-base text-darkdarkblue pb-2 hover:text-hover"> <a href="/externalresource/">Explore 20+ external resources &rarr; </a></h3>
             </div>
           </div>
     

@@ -35,6 +35,7 @@ module.exports = {
       "darkestgreen": "#132A13",
       "black": "#000000",
       "purple": "#373050",
+      "hover": "#4D8FE4",
     },
   },
 }
