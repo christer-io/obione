@@ -24,7 +24,7 @@ function Header() {
                 </div>  
                 <div className="flex justify-center">   
                 <Link href="/">
-                    <h3 className="text-xs font-light  hover:text-darkgreen">Learn</h3>
+                    <h2 className="text-xs font-light  hover:text-darkgreen">Learn</h2>
                 </Link>
                 </div> 
               
@@ -39,7 +39,7 @@ function Header() {
                 </div>  
                 <div className="flex justify-center">  
                 <Link href="/faq/">  
-                    <h3 className="text-xs font-light  hover:text-darkgreen">FAQ</h3>
+                    <h2 className="text-xs font-light  hover:text-darkgreen">FAQ</h2>
                 </Link>
                 </div> 
             
