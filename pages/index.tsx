@@ -38,10 +38,11 @@ export default function Home ({ posts, technical, external, question  }: Props) 
         <meta name="description" content="Open source, open data, open education and digital public goods"></meta>
       </Head>
       <Header />
-      <div className="max-w-7xl mx-auto">
       <Banner part1="Be the change" part2="that inspires change!" subtext="With an open philosophy and methodology we can solve the global grand challenges in more effective, transparent and democratic ways."/>
 
-      <div className='text-3xl text-center font-sans text-darkdarkblue p-2 '> 
+      <div className="max-w-7xl mx-auto">
+     
+      <div className='text-3xl text-center font-sans text-darkdarkblue p-2 pt-7'> 
       <h2>The elements of open </h2> 
       <h3 className="text-base">The open movement is built on a set of core elements</h3></div>
       {/* posts */}
