@@ -20,15 +20,13 @@ export default function Results ( { question } ) {
     <div>
         <div>
             <Header />
-        <div>      
-        </div>
-            <h1>Search for {find}</h1>
+        </div>      
+          
+        <div className='max-w-7xltext-xl auto-mx text-center font-sans text-darkdarkblue pt-9' >
+            <h2>Search for the term: {find}</h2> 
         </div>
         <section className='bg-white'>
-          <div className='max-w-7xl mx-auto text-3xl text-center font-sans text-darkdarkblue pt-9' >
-            <h2>Search for</h2> 
-            <h3 className="text-base pb-2">{find}</h3>
-          <div/>
+
           <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-3 pl-3 pr-3 pt-5 pb-4">
             {question.map((post) => (
                 <Questions
@@ -36,15 +34,17 @@ export default function Results ( { question } ) {
                 postid={post.slug}
                 title={post.title} 
                 url={post.slug.current}
-                
                 />
-              ))}
-            </div>  
-            <div>
-              <h3 className="text-center text-base pb-2 hover:text-hover"> <a href="/faq/">Explore 50+ FAQs &rarr; </a></h3>
-            </div>
+                ))}
+          </div>  
+              
+          <div>
+            <h3 className="text-center text-base pb-2 hover:text-hover"> <a href="/faq/">Explore 50+ FAQs &rarr; </a></h3>
           </div>
-       </section>
+            
+        </section>
+        
+      
     </div>
     )
 };

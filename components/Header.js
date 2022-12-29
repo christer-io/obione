@@ -30,7 +30,7 @@ function Header() {
             </Link>     
         </div>  
         <div className="p-1 space-x-2">
-          <input onChange={(e) => setSearch(e.target.value)}></input>
+          <input className="rounded-xl p-1" onChange={(e) => setSearch(e.target.value)}></input>
           <button onClick={searching} className="text-maxdarkblue pt-1 pb-1 pr-2 pl-2 bg-white rounded-xl">Submit</button>  
         </div> 
           
