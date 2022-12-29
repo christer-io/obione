@@ -22,7 +22,7 @@ export default function Results ( { question } ) {
             <Header />
         </div>      
           
-        <div className='max-w-7xltext-xl auto-mx text-center font-sans text-darkdarkblue pt-9' >
+        <div className='max-w-7xl text-2xl text-center font-sans text-darkdarkblue pt-9' >
             <h2>Search for the term: {find}</h2> 
         </div>
         <section className='bg-white'>
