@@ -1,9 +1,27 @@
 import Link from "next/link"
 import AccountMenu from "./Menu"
 import { MenuIcon, SearchIcon, UserCircleIcon, AcademicCapIcon, HomeIcon, QuestionMarkCircleIcon } from "@heroicons/react/solid"
+import { useRouter } from "next/router"
+import React, { FormEvent, useState} from "react"
 
 
 function Header() {
+  const [search, setSearch] = useState("");
+  const router = useRouter();
+
+
+
+  const searching = () => {
+      router.push({
+      pathname: "/results/",
+      query: {
+          searchinput: search
+      } 
+
+      });
+  };
+
+  
   return (
     <header className="sticky flex justify-between p-3 mx-auto shadow-md bg-maxdarkblue">
         <div className="flex items-center space-x-5">
@@ -11,7 +29,10 @@ function Header() {
                 <h1 className="text-3xl pl-3 cursor-pointer font-sans font-bold text-blue">Obi<span className="text-white">One.io</span></h1>
             </Link>     
         </div>  
-         
+        <div className="p-1 space-x-2">
+          <input onChange={(e) => setSearch(e.target.value)}></input>
+          <button onClick={searching} className="text-maxdarkblue pt-1 pb-1 pr-2 pl-2 bg-white rounded-xl">Submit</button>  
+        </div> 
           
         
         <div className="hidden md:grid grid-cols-3 space-x-5 text-white "> 

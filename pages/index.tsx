@@ -26,7 +26,7 @@ interface Props {
 }
 
 export default function Home ({ posts, technical, external, question  }: Props) {
-  console.log(posts);
+ 
   return (
     <div className="">
    
@@ -42,7 +42,7 @@ export default function Home ({ posts, technical, external, question  }: Props) 
 
       <div className="max-w-7xl mx-auto">
      
-      <div className='text-3xl text-center font-sans text-darkdarkblue p-2 pt-7'> 
+      <div className='text-3xl text-center font-sans text-darkdarkblue p-2 pt-12'> 
       <h2>The elements of open </h2> 
       <h3 className="text-base">The open movement is built on a set of core elements</h3></div>
       {/* posts */}
@@ -119,7 +119,6 @@ export default function Home ({ posts, technical, external, question  }: Props) 
     </div>
   )
 };
-
 export const getServerSideProps = async () => {
   const query = `*[_type == "post" && tag =="featured"]{_id, title, description, mainImage, body, slug}`
   const posts = await sanityClient.fetch(query);
