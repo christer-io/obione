@@ -50,10 +50,7 @@ export default function Results ( { question } ) {
 export async function getServerSideProps({query}) {
   const searchinput = query.searchinput;
 
-  if (!searchinput) {
-    return {
-        notFound: true
-    }} else {
+  
 
     const faq = `*[_type == "question" && title match $tag]{_id, title, slug, tag }`
     
@@ -71,6 +68,6 @@ export async function getServerSideProps({query}) {
               question,
           }
 
-    }};
+    };
   }
 };
