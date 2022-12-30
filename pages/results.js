@@ -66,8 +66,10 @@ export default function Results ( { question } ) {
 export async function getServerSideProps({query}) {
   const searchinput = query.searchinput;
 
-  
-  
+    //
+   //Christer - prøv å kall Sanity API direkte
+  //
+
     //const faq = `*[_type == "question" && title match $tag]{_id, title, slug, tag }`
     
     const data = await fetch("https://www.obione.io/api/content").
