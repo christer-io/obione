@@ -67,12 +67,23 @@ export async function getServerSideProps({query}) {
   const searchinput = query.searchinput;
 
   
-    //const faq = ""
-    const faq = `*[_type == "question" && title match $tag]{_id, title, slug, tag }`
+  
+    //const faq = `*[_type == "question" && title match $tag]{_id, title, slug, tag }`
     
-    const question = await sanityClient.fetch(faq, {
-      tag: searchinput,
+    const data = await fetch("https://www.obione.io/api/content").
+    then(
+      (res) => res.json()
+    );
+
+    let question = data.filter(qa => {
+      const regex = new RegExp(`${searchinput}`, 'gi');
+      return qa.title.match(regex);
     });
+
+  
+    //const question = await sanityClient.fetch(faq, {
+    //  tag: searchinput,
+    //});
     
     //const question = await fetch(faq);
 
@@ -83,7 +94,7 @@ export async function getServerSideProps({query}) {
       } else {
         return {
           props: {
-              question,
+            question,
           }
 
     };
