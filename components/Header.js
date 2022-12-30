@@ -11,8 +11,8 @@ function Header() {
 
 
 
-  const searching = () => {
-      router.push({
+  const searching = async () => {   
+    router.push({
       pathname: "/results/",
       query: {
           searchinput: search
