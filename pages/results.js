@@ -53,15 +53,15 @@ export async function getServerSideProps({query}) {
     tag: searchinput,
   });
     
-  if (!question) {
-    return {
-        notFound: true
-    }
-  }
-  return {
-    props: {
-        question,
-    },
-    revalidate: 600,
-  };
+   if (!question) {
+        return {
+            notFound: true
+        }
+    } else {
+      return {
+        props: {
+            question,
+        }
+
+    }};
 };

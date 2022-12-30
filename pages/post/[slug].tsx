@@ -106,19 +106,19 @@ export const getStaticPaths = async () => {
         body,
           }`
 
-          const post = await sanityClient.fetch(query, {
-              slug: params?.slug,
-          })
+    const post = await sanityClient.fetch(query, {
+        slug: params?.slug,
+    })
 
-          if (!post) {
-              return {
-                  notFound: true
-              }
-          }
-          return {
-              props: {
-                  post,
-              },
-              revalidate: 600,
-          };
+    if (!post) {
+        return {
+            notFound: true
+        }
+    } 
+    return {
+        props: {
+            post,
+        },
+        revalidate: 600,
+    };
   };
