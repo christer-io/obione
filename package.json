@@ -12,6 +12,7 @@
     "@mui/icons-material": "^5.10.9",
     "@mui/material": "^5.10.11",
     "@sanity/image-url": "^1.0.1",
+    "cors": "^2.8.5",
     "eslint-config-next": "^13.0.7",
     "next": "^13.0.7",
     "next-sanity": "^1.0.1",
