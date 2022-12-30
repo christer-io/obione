@@ -45,23 +45,29 @@ export default function Results ( { question } ) {
 };
 
 export async function getServerSideProps({query}) {
-
   const searchinput = query.searchinput;
-  const faq = `*[_type == "question" && title match $tag]{_id, title, slug, tag }`
-  
-  const question = await sanityClient.fetch(faq, {
-    tag: searchinput,
-  });
+
+  if (!searchinput) {
+    return {
+        notFound: true
+    }} else {
+
+    const faq = `*[_type == "question" && title match $tag]{_id, title, slug, tag }`
     
-   if (!question) {
+    const question = await sanityClient.fetch(faq, {
+      tag: searchinput,
+    });
+      
+    if (!question) {
+          return {
+              notFound: true
+          }
+      } else {
         return {
-            notFound: true
-        }
-    } else {
-      return {
-        props: {
-            question,
-        }
+          props: {
+              question,
+          }
 
     }};
+  }
 };
