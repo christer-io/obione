@@ -15,7 +15,6 @@ export default function Results ( { question } ) {
     const find = router.query.searchinput;
     
     
-
     return (
     <div>
         <div>
@@ -37,10 +36,6 @@ export default function Results ( { question } ) {
                 />
                 ))}
           </div>  
-              
-          <div>
-            <h3 className="text-center text-base pb-2 hover:text-hover"> <a href="/faq/">Explore 50+ FAQs &rarr; </a></h3>
-          </div>
             
         </section>
         
@@ -49,18 +44,15 @@ export default function Results ( { question } ) {
     )
 };
 
-export async function getServerSideProps({params, query}) {
+export async function getServerSideProps({query}) {
 
   const searchinput = query.searchinput;
-
   const faq = `*[_type == "question" && title match $tag]{_id, title, slug, tag }`
   
   const question = await sanityClient.fetch(faq, {
     tag: searchinput,
-  })
+  });
     
-
-
   return {
     
     props: {
