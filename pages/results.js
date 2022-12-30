@@ -53,7 +53,7 @@ export async function getServerSideProps({params, query}) {
 
   const searchinput = query.searchinput;
 
-  const faq = `*[_type == "question" && title match $tag]{_id, title, slug, body, license, source}`
+  const faq = `*[_type == "question" && title match $tag]{_id, title, slug, tag }`
   
   const question = await sanityClient.fetch(faq, {
     tag: searchinput,
