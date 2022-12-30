@@ -10,7 +10,7 @@ function Header() {
     <header className="sticky flex justify-between p-3 mx-auto shadow-md bg-maxdarkblue">
         <div className="flex items-center space-x-5">
             <Link href="/">
-                <h1 className="text-3xl pl-3 cursor-pointer font-sans font-bold text-blue">Obi<span className="text-white">One.io</span></h1>
+                <h1 className="text-3xl pl-3 cursor-pointer font-sans font-bold text-blue">Obi<span className="text-white">One.io (Beta)</span></h1>
             </Link>     
         </div>  
           

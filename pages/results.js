@@ -4,6 +4,7 @@ import { useRouter } from "next/router"
 import Header from "../components/Header"
 import Questions from "../components/Questions"
 import Search from "../components/Search"
+import Head from 'next/head';
 
 import { sanityClient, urlFor } from "../sanity";
 import { content } from "../tailwind.config";
@@ -11,21 +12,36 @@ import { content } from "../tailwind.config";
 
 
 export default function Results ( { question } ) {
-
     const router = useRouter();
-    const find = router.query.searchinput;
-    
-    
+    let find = router.query.searchinput;
+    let searchIntro = "Search results for the term: ";
+   
+    if(find == ""){
+      find = "Please enter a search term"
+  
+    } else {
+      find = searchIntro.concat(find);
+    }
+   
     return (
+     
     <div>
         <div>
+            <Head>
+              <title>ObiOne search</title>
+              <link rel="icon" href="/favicon.ico" />
+              <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+              <meta name="keywords" content="open source, open data, open content"></meta>
+              <meta name="description" content="Open source, open data, open education and digital public goods"></meta>
+            </Head>
             <Header />
         </div>      
         <div className='max-w-7xl mx-auto font-sans text-darkdarkblue pt-9' >
             <Search />
         </div>  
         <div className='max-w-7xl mx-auto text-2xl font-sans text-darkdarkblue pt-9' >
-            <h2 className="text-center">Search results for the term: {find}</h2> 
+            
+            <h2 className="text-center">{find}</h2> 
         </div>
         <section className='bg-white'>
 
