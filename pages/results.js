@@ -3,6 +3,7 @@ import { ClickAwayListener } from "@mui/material";
 import { useRouter } from "next/router"
 import Header from "../components/Header"
 import Questions from "../components/Questions"
+import Search from "../components/Search"
 
 import { sanityClient, urlFor } from "../sanity";
 import { content } from "../tailwind.config";
@@ -20,9 +21,11 @@ export default function Results ( { question } ) {
         <div>
             <Header />
         </div>      
-          
-        <div className='max-w-7xl text-2xl text-center font-sans text-darkdarkblue pt-9' >
-            <h2>Search for the term: {find}</h2> 
+        <div className='max-w-7xl mx-auto font-sans text-darkdarkblue pt-9' >
+            <Search />
+        </div>  
+        <div className='max-w-7xl mx-auto text-2xl font-sans text-darkdarkblue pt-9' >
+            <h2 className="text-center">Search results for the term: {find}</h2> 
         </div>
         <section className='bg-white'>
 

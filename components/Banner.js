@@ -1,5 +1,5 @@
 import Link from "next/link"
-import StandardButton from "./StandardButton"
+import Search from "./Search"
 
 
 function Banner({ part1, part2, subtext }) {
@@ -17,8 +17,8 @@ function Banner({ part1, part2, subtext }) {
           <h2 className=" text-white text-center pl-5 ms:pl-12 pr-5 ms:pr-12 text-sm sm:text-xl lg:text-2xl">
           {subtext}
           </h2>
-          <div className="flex justify-center space-x-3 pt-8 pb-5 pl-5">
-            <StandardButton buttontext="Open - to solve grand challanges" url="/post/opensource"/>
+          <div className="flex justify-center space-x-3 pt-8 pb-5 pl-5 text-maxdarkblue">
+            <Search />
             
           </div>
       
