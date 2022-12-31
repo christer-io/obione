@@ -63,9 +63,13 @@ export default function Results ( { question } ) {
     )
 };
 
-export async function getServerSideProps({query}) {
+export async function getServerSideProps({context, query, res}) {
   const searchinput = query.searchinput;
 
+  res.setHeader(
+    "Cache-Control",
+    "public, s-maxage=1800, stale-while-revalidate=86400"
+  );
     //
    //Christer - prøv å kall Sanity API direkte
   //
