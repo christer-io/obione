@@ -74,9 +74,9 @@ export async function getServerSideProps({context, query, res}) {
    //Christer - prøv å kall Sanity API direkte
   //
 
-    //const faq = `*[_type == "question" && title match $tag]{_id, title, slug, tag }`
+    const faq = "https://obione-six.vercel.app/api/content/"
     
-    const data = await fetch("https://www.obione.io/api/content").
+    const data = await fetch(faq).
     then(
       (res) => res.json()
     );
@@ -91,7 +91,6 @@ export async function getServerSideProps({context, query, res}) {
     //  tag: searchinput,
     //});
     
-    //const question = await fetch(faq);
 
     if (!question) {
           return {
