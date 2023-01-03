@@ -6,7 +6,7 @@ import { ArrowRightIcon } from "@heroicons/react/solid"
 
 function Questions({postid, url, title}) {
     return (
-        <Link key={postid} href={`/question/${url}`}>
+        <Link key={postid} href={`/question/${url}`} prefetch={false}>
         <div className="border text-black hover:text-hover border-lightgray rounded-lg group cursor-pointer overflow-hidden">
           <div className="flex justify-between p-5 bg-white">
             <div>
