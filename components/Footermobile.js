@@ -1,5 +1,6 @@
 import Link from 'next/link';
-import { MenuIcon, SearchIcon, UserCircleIcon, AcademicCapIcon, HomeIcon, QuestionMarkCircleIcon } from "@heroicons/react/solid"
+import { MenuIcon, SearchIcon, UserCircleIcon, AcademicCapIcon, DocumentTextIcon, HomeIcon, QuestionMarkCircleIcon } from "@heroicons/react/solid"
+import Search from './Search';
 
 function Footermobile() {
   return (
@@ -25,13 +26,13 @@ function Footermobile() {
                 
                 <div className="">
                     <div className="flex justify-center">
-                    <Link href="/learningpath/">
-                        <AcademicCapIcon className="h-6 fill-darkdarkblue "/>
+                    <Link href="/results?searchinput=open">
+                        <SearchIcon className="h-6 fill-darkdarkblue "/>
                     </Link>
                     </div>  
                     <div className="flex justify-center">   
-                    <Link href="/">
-                        <h3 className="text-xs font-light">Learn</h3>
+                    <Link href="/results?searchinput=open">
+                        <h3 className="text-xs font-light">Search FAQ</h3>
                     </Link>
                     </div> 
                  
@@ -41,12 +42,12 @@ function Footermobile() {
 
                     <div className="flex justify-center">
                     <Link href="/faq/">
-                        <QuestionMarkCircleIcon className="h-6 fill-darkdarkblue "/>
+                        <DocumentTextIcon className=" h-6 fill-darkdarkblue "/>
                     </Link>
                     </div>  
                     <div className="flex justify-center">  
-                    <Link href="/">  
-                        <h3 className="text-xs font-light">FAQ</h3>
+                    <Link href="/faq/">  
+                        <h3 className="text-xs font-light">Resources</h3>
                     </Link>
                     </div> 
                 
