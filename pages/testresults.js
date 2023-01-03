@@ -59,7 +59,7 @@ export default function Results ( { question } ) {
 export async function getServerSideProps({query, res}) {
   const searchinput = query.searchinput;
   res.setHeader("Cache-Control", "public, s-maxage=3600, stale-while-revalidate");
-  const faq = "https://obione-six.vercel.app/api/content/"
+  const faq = "https://obione-six.vercel.app/api/edgecontent/"
   const data = await fetch(faq).
   then(
     (res) => res.json()
