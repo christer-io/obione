@@ -41,12 +41,12 @@ function Footermobile() {
                 <div className="">
 
                     <div className="flex justify-center">
-                    <Link href="/faq/">
+                    <Link href="/externalresource/">
                         <DocumentTextIcon className=" h-6 fill-darkdarkblue "/>
                     </Link>
                     </div>  
                     <div className="flex justify-center">  
-                    <Link href="/faq/">  
+                    <Link href="/externalresource/">  
                         <h3 className="text-xs font-light">Resources</h3>
                     </Link>
                     </div> 

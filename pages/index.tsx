@@ -81,7 +81,7 @@ export default function Home ({ posts, technical, external, question  }: Props) 
               ))}
             </div>  
             <div>
-              <h3 className="text-center text-base pb-2 hover:text-hover"> <a href="/faq/">Explore 50+ FAQs &rarr; </a></h3>
+              <h3 className="text-center text-base pb-2 hover:text-hover"> <a href="/results?searchinput=">Explore 60+ FAQs &rarr; </a></h3>
             </div>
           </div>
        </section>
@@ -129,7 +129,7 @@ export const getServerSideProps = async () => {
   const externalresource = `*[_type == "externalresource" && tag =="external" && featured =="yes"]{_id, title, slug, description, url}`
   const external = await sanityClient.fetch(externalresource);
 
-  const faq = `*[_type == "question" && tag =="opensource" && featured =="yes"]{_id, title, slug, body, license, source}`
+  const faq = `*[_type == "question" && featured =="yes"]{_id, title, slug, body, license, source}`
   const question = await sanityClient.fetch(faq);
 
   return {

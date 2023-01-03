@@ -61,7 +61,7 @@ function Question({ faq }: Props) {
                 }
             }
             />
-          <div className="pt-9">
+          <div className="pt-9 pb-12">
             <License  license={faq.license} source={faq.source} url="https://creativecommons.org/licenses/by-sa/4.0/"/>    
           </div>
         </article>
