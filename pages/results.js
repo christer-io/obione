@@ -1,20 +1,13 @@
-import { Quickreply } from "@mui/icons-material";
-import { ClickAwayListener } from "@mui/material";
 import { useRouter } from "next/router"
 import Header from "../components/Header"
 import Questions from "../components/Questions"
 import Search from "../components/Search"
 import Head from 'next/head';
 
-import { sanityClient, urlFor } from "../sanity";
-import { content } from "../tailwind.config";
-
-
-
 export default function Results ( { question } ) {
     const router = useRouter();
     let find = router.query.searchinput;
-    let searchIntro = "Search results for the term: ";
+    let searchIntro = "Showing search results for the term: ";
    
     if(find == ""){
       find = "Please enter a search term"
@@ -63,45 +56,30 @@ export default function Results ( { question } ) {
     )
 };
 
-export async function getServerSideProps({context, query, res}) {
+export async function getServerSideProps({query, res}) {
   const searchinput = query.searchinput;
-
-  res.setHeader(
-    "Cache-Control",
-    "public, s-maxage=1800, stale-while-revalidate=86400"
+  res.setHeader("Cache-Control", "public, s-maxage=3600, stale-while-revalidate");
+  const faq = "https://obione-six.vercel.app/api/content/"
+  const data = await fetch(faq).
+  then(
+    (res) => res.json()
   );
-    //
-   //Christer - prøv å kall Sanity API direkte
-  //
-
-    const faq = "https://obione-six.vercel.app/api/content/"
-    
-    const data = await fetch(faq).
-    then(
-      (res) => res.json()
-    );
-
-    let question = data.filter(qa => {
-      const regex = new RegExp(`${searchinput}`, 'gi');
-      return qa.title.match(regex);
-    });
-
+  let question = data.filter(qa => {
+    const regex = new RegExp(`${searchinput}`, 'gi');
+    return qa.title.match(regex);
+  });
   
-    //const question = await sanityClient.fetch(faq, {
-    //  tag: searchinput,
-    //});
-    
-
-    if (!question) {
-          return {
-              notFound: true
-          }
-      } else {
+  if (!question) {
         return {
-          props: {
-            question,
-          }
-
+            notFound: true
+        }
+  } else {
+    return {
+      props: {
+        question,
+      }
     };
   }
 };
+
+

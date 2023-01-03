@@ -7,7 +7,7 @@ import Head from 'next/head';
 export default function Results ( { question } ) {
     const router = useRouter();
     let find = router.query.searchinput;
-    let searchIntro = "Search results for the term: ";
+    let searchIntro = "Showing search results for the term: ";
    
     if(find == ""){
       find = "Please enter a search term"
@@ -68,9 +68,7 @@ export async function getServerSideProps({query, res}) {
     const regex = new RegExp(`${searchinput}`, 'gi');
     return qa.title.match(regex);
   });
-  //const question = await sanityClient.fetch(faq, {
-  //  tag: searchinput,
-  //});
+  
   if (!question) {
         return {
             notFound: true

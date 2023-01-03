@@ -7,7 +7,7 @@ function Header() {
 
   
   return (
-    <header className="sticky flex justify-between pl-3 mx-auto shadow-md bg-maxdarkblue">
+    <header className="sticky flex justify-between p-3 mx-auto shadow-md bg-maxdarkblue">
         <div className="flex items-center space-x-5">
             <Link href="/">
                 <h1 className="text-xl sm:text-2xl pl-3 cursor-pointer font-sans font-bold text-blue">Obi<span className="text-white">One.io (Beta)</span></h1>
@@ -16,7 +16,7 @@ function Header() {
           
         
         <section className="bg-maxdarkblue shadow-inner p-1 ">
-            <div className="hidden md:grid grid-cols-3 p-2 space-x-4 "> 
+            <div className="hidden md:grid grid-cols-3 space-x-4 "> 
                 
                 
                 <div className="">
