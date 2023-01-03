@@ -10,8 +10,9 @@ function Search() {
 
 
   const searching = async () => {   
+    const isTestroute = router.pathname.includes("testresults")
     router.push({
-      pathname: "/results/",
+      pathname: isTestroute ? "/testresults/":"/results/",
       query: {
           searchinput: search
       } 
