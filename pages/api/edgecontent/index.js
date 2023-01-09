@@ -1,5 +1,5 @@
 
-import { sanityClient, urlFor } from "../../sanity";
+import { sanityClient, urlFor } from "../../../sanity";
 // import { NextRequest } from 'next/server'
 
 export default async function handler(req) {
