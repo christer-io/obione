@@ -24,16 +24,49 @@ function Post({ post }: Props) {
 
         <Header />
 
-        <article className="max-w-3xl mx-auto pb-5">
+         {/* posts <img 
+        className="w-full h-40 object-cover"
+        src={urlFor(post.mainImage).url()!} 
+        alt="" />
+        */} 
+        <article className="max-w-3xl mx-auto p-5">
             <h1 className="text-3xl mt-10 mb-3">
                {post.title} 
             </h1>
             
-            <div className="h-screen max-w-3xl mx-auto pb-9">
+            <div className="h-screen max-w-3xl mx-auto pt-9 pb-9">
                 <iframe className="h-full w-full" src={`https://digitallibrary.io/wp-admin/admin-ajax.php?action=h5p_embed&id=${post.url}`}  title="Open source"></iframe> 
              </div>
 
-            
+            <PortableText 
+            className="mt-10"
+            dataset={process.env.NEXT_PUBLIC_SANITY_DATASET!}
+            projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!}
+            content={post.body}
+            serializers={{
+                h1: (props: any) => (
+                    <h1 className="text-4xl font-sans my-3 text-darkdarkblue" {...props} />
+                ),
+                h2: (props: any) => (
+                    <h2 className="text-2xl font-sans my-3 text-darkdarkblue" {...props} />
+                ),
+                h3: (props: any) => (
+                    <h3 className="text-xl font-sans my-3 text-darkdarkblue" {...props} />
+                ),
+                normal: (props: any) => (
+                    <h1 className="text-l my-4" {...props} />
+                ),
+                li: ({ children }: any) => (
+                    <li className="ml-4 list-disc">{children}</li>
+                ),
+                link: ({ href, children }: any) => (
+                    <a href={href} className="text-blue hover:underline">
+                        {children}
+                    </a>
+                ),
+                }
+            }
+            />
         </article>
 
        <Footermobile />
