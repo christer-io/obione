@@ -21,13 +21,13 @@ function Header() {
                 
                 <div className="">
                     <div className="flex justify-center">
-                    <Link href="/learningpath/">
-                        <AcademicCapIcon className="h-6 fill-white "/>
+                    <Link href="/results?searchinput=">
+                        <SearchIcon className="h-6 fill-white "/>
                     </Link>
                     </div>  
                     <div className="flex justify-center">   
-                    <Link href="/learningpath">
-                        <h3 className="text-xs text-white font-light">Learn</h3>
+                    <Link href="/results?searchinput=">
+                        <h3 className="text-xs text-white font-light">Search</h3>
                     </Link>
                     </div> 
                  
