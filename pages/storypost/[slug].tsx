@@ -6,6 +6,8 @@ import PortableText from "react-portable-text"
 import { ChildProcess, ChildProcessWithoutNullStreams } from "child_process";
 import Head from "next/head";
 import Footermobile from '../../components/Footermobile';
+import getYouTubeId from 'get-youtube-id'
+import YouTube from 'react-youtube'
 
 interface Props {
     post: Post;
@@ -23,7 +25,6 @@ function Post({ post }: Props) {
         </Head>
 
         <Header />
-
         <article className="max-w-3xl mx-auto pb-5">
             <h1 className="text-3xl mt-10 mb-3">
                {post.title} 
@@ -36,6 +37,49 @@ function Post({ post }: Props) {
             
         </article>
 
+        {/* posts 
+            <article className="max-w-3xl mx-auto p-5">
+            
+            
+            <PortableText 
+            className="mt-10"
+            dataset={process.env.NEXT_PUBLIC_SANITY_DATASET!}
+            projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!}
+            content={post.body}
+            serializers={{
+                h1: (props: any) => (
+                    <h1 className="text-4xl font-sans my-3 text-darkdarkblue" {...props} />
+                ),
+                h2: (props: any) => (
+                    <h2 className="text-2xl font-sans my-3 text-darkdarkblue" {...props} />
+                ),
+                h3: (props: any) => (
+                    <h3 className="text-xl font-sans my-3 text-darkdarkblue" {...props} />
+                ),
+                normal: (props: any) => (
+                    <h1 className="text-l my-4" {...props} />
+                ),
+                li: ({ children }: any) => (
+                    <li className="ml-4 list-disc">{children}</li>
+                ),
+                link: ({ href, children }: any) => (
+                    <a href={href} className="text-blue hover:underline">
+                        {children}
+                    </a>
+                ),
+                youtube: ({url}:any) => {
+                    const id = getYouTubeId(url)
+                    if (id) {
+                        return (<YouTube videoId={id} />)
+                    }
+                    return null;
+                  }
+                }
+            }
+            />
+        </article>
+            */}
+        
        <Footermobile />
 
     </main>
@@ -45,7 +89,7 @@ function Post({ post }: Props) {
 export default Post;
 
 export const getStaticPaths = async () => {
-    const query = `*[_type == "post"]{
+    const query = `*[_type == "story"]{
         _id, 
         slug {
             current
@@ -68,7 +112,7 @@ export const getStaticPaths = async () => {
   };
 
   export const getStaticProps: GetStaticProps = async ({params}) => {
-    const query = `*[_type == "post" && slug.current == $slug][0]{
+    const query = `*[_type == "story" && slug.current == $slug][0]{
         _id, 
         _createdAt,
         description,

@@ -11,9 +11,10 @@ import { Post } from '../../typings';
 import Textcard from '../../components/Textcard';
 import Externallink from '../../components/Externallink';
 import Questions from '../../components/Questions';
-import Path from '../../components/Path';
+import Plaincaed from '../../components/Plaincard';
 import Footermobile from '../../components/Footermobile';
 import StandardButton from '../../components/StandardButton';
+import Plaincard from '../../components/Plaincard';
 
 
 interface Props {
@@ -37,17 +38,20 @@ export default function Home ({ question }: Props) {
       <div className="max-w-7xl mx-auto pt-9">
       
       <section className='bg-white'>
-          <div className='max-w-7xl mx-auto  text-3xl text-center font-sans text-darkdarkblue pt-9' >
-            <h2>Mini Courses </h2> 
-            <h3 className="text-base pb-2">Micro learning paths covering open core subjects.</h3>
+          <div className='max-w-7xl mx-auto  text-3xl text-center font-sans text-darkdarkblue pt-9 ' >
+            <h2 className='pb-4'>Open Stories, project and people </h2> 
+            
           <div/>
           <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-3 pl-3 pr-3 pt-5 pb-8">
             {question.map((post) => (
-                <Path
+                <Plaincard
+                description={post.description}
+                img={post.mainImage}
                 key={post._id}
                 postid={post.slug}
                 title={post.title} 
                 url={post.slug.current}
+                type="storypost"
                 
                 />
               ))}
@@ -65,7 +69,7 @@ export default function Home ({ question }: Props) {
 
 export const getServerSideProps = async () => {
 
-  const faq = `*[_type == "path" && tag =="open"]{_id, title, slug, body, url}`
+  const faq = `*[_type == "story"]{_id, title, description, slug, body, url, mainImage}`
   const question = await sanityClient.fetch(faq);
 
   return {
