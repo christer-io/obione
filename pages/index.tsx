@@ -6,6 +6,7 @@ import Footer from '../components/Footer';
 import BannerSmall from '../components/BannerSmall'
 import Header from '../components/Header';
 import Banner from '../components/Banner';
+import Plaincard from '../components/Plaincard';
 import { sanityClient, urlFor } from "../sanity";
 import { Post } from '../typings';
 import Textcard from '../components/Textcard';
@@ -21,11 +22,11 @@ interface Props {
   technical: [Post];
   external: [Post];
   question: [Post];
-  
+  stories: [Post];
 
 }
 
-export default function Home ({ posts, technical, external, question  }: Props) {
+export default function Home ({ posts, technical, external, question, stories  }: Props) {
  
   return (
     <div className="">
@@ -65,6 +66,30 @@ export default function Home ({ posts, technical, external, question  }: Props) 
         ))}
       </div>
       <section className='bg-white'>
+          <div className='max-w-7xl mx-auto  text-3xl text-center font-sans text-darkdarkblue pt-9 ' >
+            <h2 className='pb-4'>Open Stories, project and people </h2> 
+            
+          <div/>
+          <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-3 pl-3 pr-3 pt-5 pb-5">
+            {stories.map((post) => (
+                <Plaincard
+                description={post.description}
+                img={post.mainImage}
+                key={post._id}
+                postid={post.slug}
+                title={post.title} 
+                url={post.slug.current}
+                type="storypost"
+                
+                />
+              ))}
+            </div>  
+            <div>
+              <h3 className="text-center text-base pb-2 hover:text-hover"> <a href="/story/">Explore more stories &rarr; </a></h3>
+            </div>
+          </div>
+       </section>
+      <section className='bg-white'>
           <div className='max-w-7xl mx-auto text-3xl text-center font-sans text-darkdarkblue pt-9' >
             <h2>FAQ</h2> 
             <h3 className="text-base pb-2">Questions and answers intended to help people understand "open".</h3>
@@ -81,7 +106,7 @@ export default function Home ({ posts, technical, external, question  }: Props) 
               ))}
             </div>  
             <div>
-              <h3 className="text-center text-base pb-2 hover:text-hover"> <a href="/results?searchinput=">Explore 60+ FAQs &rarr; </a></h3>
+              <h3 className="text-center text-base pb-2 hover:text-hover"> <a href="/results?searchinput=">Explore more FAQs &rarr; </a></h3>
             </div>
           </div>
        </section>
@@ -104,7 +129,7 @@ export default function Home ({ posts, technical, external, question  }: Props) 
               ))}
             </div>  
             <div>
-              <h3 className="text-center text-base text-darkdarkblue pb-2 hover:text-hover"> <a href="/externalresource/">Explore 20+ external resources &rarr; </a></h3>
+              <h3 className="text-center text-base text-darkdarkblue pb-2 hover:text-hover"> <a href="/externalresource/">Explore more external resources &rarr; </a></h3>
             </div>
           </div>
     
@@ -132,12 +157,16 @@ export const getServerSideProps = async () => {
   const faq = `*[_type == "question" && featured =="yes"]{_id, title, slug, body, license, source}`
   const question = await sanityClient.fetch(faq);
 
+  const story = `*[_type == "story" && tag=="featured"]{_id, title, description, slug, body, url, mainImage}`
+  const stories = await sanityClient.fetch(story);
+
   return {
     props: {
       posts,
       technical,
       external,
       question,
+      stories,
     }
   }
 };
