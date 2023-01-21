@@ -9,5 +9,6 @@ export interface Post {
     url: string;
     license: string;
     source: string;
+    github: string;
     
 }

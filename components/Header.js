@@ -16,7 +16,7 @@ function Header() {
           
         
         <section className="bg-maxdarkblue shadow-inner p-1 ">
-            <div className="hidden md:grid grid-cols-3 space-x-4 "> 
+            <div className="hidden md:grid grid-col-1 space-x-4 pr-3"> 
                 
                 
                 <div className="">
@@ -33,20 +33,6 @@ function Header() {
                  
                 </div>
                 
-                <div className="">
-
-                    <div className="flex justify-center">
-                    <Link href="/faq/">
-                        <QuestionMarkCircleIcon className="h-6 fill-white "/>
-                    </Link>
-                    </div>  
-                    <div className="flex justify-center">  
-                    <Link href="/faq">  
-                        <h3 className="text-xs text-white font-light"> FAQ</h3>
-                    </Link>
-                    </div> 
-                
-                </div>
                 
             </div> 
             </section>

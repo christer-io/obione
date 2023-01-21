@@ -92,7 +92,7 @@ export default function Home ({ posts, technical, external, question, stories  }
       <section className='bg-white'>
           <div className='max-w-7xl mx-auto text-3xl text-center font-sans text-darkdarkblue pt-9' >
             <h2>FAQ</h2> 
-            <h3 className="text-base pb-2">Questions and answers intended to help people understand "open".</h3>
+            <h3 className="text-base pb-2">Questions and answers intended to help you understand the "open movement".</h3>
           <div/>
           <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-3 pl-3 pr-3 pt-5 pb-4">
             {question.map((post) => (
