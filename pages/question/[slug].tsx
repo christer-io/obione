@@ -61,10 +61,10 @@ function Question({ faq }: Props) {
                 }
             }
             />
-          <div className="pt-9 pb-12">
+          <div className="pt-9 pb-3">
             <License  license={faq.license} source={faq.source} url="https://creativecommons.org/licenses/by-sa/4.0/"/>    
           </div>
-          <div>
+          <div className="pb-14">
               <h3 className="text-right text-base text-darkdarkblue pb-2 hover:text-hover"> <a href={faq.github}>Give input or edit this FAQ on Github &rarr; </a></h3>
             </div>
         </article>
