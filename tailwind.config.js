@@ -1,14 +1,14 @@
 module.exports = {
   content: [
+    "./node_modules/flowbite-react/**/*.js",
     './app/**/*.{js,ts,jsx,tsx}',
     './pages/**/*.{js,ts,jsx,tsx}',
     './components/**/*.{js,ts,jsx,tsx}',
+    "./public/**/*.html",
+    
   ],
   theme: {
     extend: {},
-  },
-  plugins: [],
-  theme: {
     colors: {
       transparent: 'transparent',
       current: 'currentColor',
@@ -39,4 +39,9 @@ module.exports = {
       "hover": "#4D8FE4",
     },
   },
+  plugins: [
+    require("flowbite/plugin")
+  ],
+    
 }
+

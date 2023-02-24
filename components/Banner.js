@@ -4,9 +4,10 @@ import Search from "./Search"
 
 function Banner({ part1, part2, subtext }) {
   return (
+    
   <div className=" mx-auto  text-white text-center pt-10 pb-12 bg-maxdarkblue">
     <div className="max-w-5xl mx-auto">
-      <h2 className="pl-10 pr-10 pt-3 text-white text-center text-2xl pt-3 pb-3">
+      <h2 className="pl-10 pr-10 text-white text-center text-2xl pt-3 pb-3">
           ObiOne.io
       </h2>
       <div className="px-5 space-y-5 ">
@@ -25,6 +26,7 @@ function Banner({ part1, part2, subtext }) {
       </div> 
       </div>
   </div>
+  
   )
 }
 

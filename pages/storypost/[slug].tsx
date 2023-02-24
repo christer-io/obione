@@ -26,11 +26,9 @@ function Post({ post }: Props) {
 
         <Header />
         <article className="max-w-3xl mx-auto pb-5">
-            <h1 className="text-3xl mt-10 mb-3">
-               {post.title} 
-            </h1>
+           
             <div>
-              <h3 className="text-right text-base text-darkdarkblue pb-2 hover:text-hover"> <a href={post.github}>Give input or edit this article on Github &rarr; </a></h3>
+              <h3 className="text-right text-base text-darkdarkblue pb-2 hover:text-hover"> <a href={post.github}>Give input on Github &rarr; </a></h3>
             </div>
             <div className="h-screen max-w-3xl mx-auto pb-9">
                 <iframe className="h-full w-full" src={`https://digitallibrary.io/wp-admin/admin-ajax.php?action=h5p_embed&id=${post.url}`}  title="Open source"></iframe> 

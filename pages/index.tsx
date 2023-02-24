@@ -4,8 +4,9 @@ import Image from 'next/image';
 import Link from 'next/link';
 import Footer from '../components/Footer';
 import BannerSmall from '../components/BannerSmall'
-import Header from '../components/Header';
+import Header from "../components/Header"
 import Banner from '../components/Banner';
+import Banner2 from '../components/Banner2';
 import Plaincard from '../components/Plaincard';
 import { sanityClient, urlFor } from "../sanity";
 import { Post } from '../typings';
@@ -38,12 +39,15 @@ export default function Home ({ posts, technical, external, question, stories  }
         <meta name="keywords" content="open source, open data, open content"></meta>
         <meta name="description" content="Open source, open data, open education and digital public goods"></meta>
       </Head>
+     
+      
       <Header />
-      <Banner part1="Be the change" part2="that inspires change!" subtext="With an open philosophy and methodology we can solve the global grand challenges in more effective, transparent and democratic ways."/>
-
+      {/*   <Banner part1="Be the change" part2="that inspires change!" subtext="With an open philosophy and methodology we can solve the global grand challenges in more effective, transparent and democratic ways."/>
+ */}
+     <Banner2  />
       <div className="max-w-7xl mx-auto">
      
-      <div className='text-3xl text-center font-sans text-darkdarkblue p-2 pt-12'> 
+      <div className='text-3xl text-center font-sans text-darkdarkblue '> 
       <h2>The basics of open </h2> 
       <h3 className="text-base">Dive in and learn more about the core topics of open</h3></div>
       {/* posts */}
