@@ -6,7 +6,7 @@ import Footer from '../components/Footer';
 import BannerSmall from '../components/BannerSmall'
 import Header from "../components/Header"
 import Banner from '../components/Banner';
-import Banner2 from '../components/Banner2';
+
 import Plaincard from '../components/Plaincard';
 import { sanityClient, urlFor } from "../sanity";
 import { Post } from '../typings';
@@ -44,7 +44,7 @@ export default function Home ({ posts, technical, external, question, stories  }
       <Header />
       {/*   <Banner part1="Be the change" part2="that inspires change!" subtext="With an open philosophy and methodology we can solve the global grand challenges in more effective, transparent and democratic ways."/>
  */}
-     <Banner2  />
+     <Banner />
       <div className="max-w-7xl mx-auto">
      
       <div className='text-3xl text-center font-sans text-darkdarkblue '> 

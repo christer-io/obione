@@ -10,7 +10,7 @@ function Questions({postid, url, title}) {
         <div className="border text-black hover:text-hover border-lightgray rounded-lg group cursor-pointer overflow-hidden">
           <div className="flex justify-between p-5 bg-white">
             <div>
-              <p className="text-lg font-bold text-left">{title}</p>
+              <p className="text-lg text-left">{title}</p>
             </div>
           </div>
           <p className="text-lg pt-5 pr-4 pb-3 text-right">&rarr;</p> 
