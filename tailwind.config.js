@@ -1,6 +1,5 @@
 /* const colors = require('tailwindcss/colors')
-console.log('colors', colors.blue)
-*/
+console.log('colors', colors.blue) */
 module.exports = {
   content: [
     "./node_modules/flowbite-react/**/*.js",
@@ -10,16 +9,16 @@ module.exports = {
     "./public/**/*.html",
     
   ],
-  safelist: [
-    'text-blue',
-  ],
   theme: {
+    extend: {
+      colors: {
+        'blue': "#4D8FE4",
+      }
+    },
     colors: {
       transparent: 'transparent',
       current: 'currentColor',
       'white': '#ffffff',
-      "blue": '#4D8FE4',
-      "bluec": '#4D8FE4',
       "blueprimary": "#3F51B5",
       "purple": "#524DCC",
       "midblue": "#3E7CB1",
