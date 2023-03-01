@@ -28,10 +28,12 @@ function Search() {
   
   return (
     <div className="flex justify-center p-3 mx-auto ">
-        <div className="p-1 space-x-2">
+        <div className="p-1 space-x-2 ">
           <form onSubmit={handleFormSubmit}>  
-              <input className="rounded-xl p-2 w-50 sm:w-60 border" placeholder="Enter search terms" onChange={(e) => setSearch(e.target.value)}></input>
+          <div className="inline-flex space-x-1">
+              <input className="bg-gray-200 h-12 rounded-xl p-2 w-50 sm:w-60 border" placeholder="Enter search terms" onChange={(e) => setSearch(e.target.value)}></input>
               <button onClick={searching} className="text-white pt-2 pb-2 pr-3 pl-3 bg-maxdarkblue rounded-xl border border-white">Search</button>  
+          </div>
           </form>
         </div> 
     </div>
