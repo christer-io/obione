@@ -45,6 +45,7 @@ export default function Results ( { question } ) {
                 postid={post.slug}
                 title={post.title} 
                 url={post.slug.current}
+                tag={post.tag}
                 />
                 ))}
           </div>  

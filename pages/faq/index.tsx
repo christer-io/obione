@@ -51,6 +51,7 @@ export default function Home ({ posts, opencontent, external, question, opendata
                 postid={post.slug}
                 title={post.title} 
                 url={post.slug.current}
+                tag={post.tag}
                 
                 />
               ))}
@@ -70,6 +71,7 @@ export default function Home ({ posts, opencontent, external, question, opendata
                 postid={post.slug}
                 title={post.title} 
                 url={post.slug.current}
+                tag={post.tag}
                 
                 />
               ))}
@@ -89,7 +91,7 @@ export default function Home ({ posts, opencontent, external, question, opendata
                 postid={post.slug}
                 title={post.title} 
                 url={post.slug.current}
-                
+                tag={post.tag}
                 />
               ))}
             </div>  
@@ -108,7 +110,7 @@ export default function Home ({ posts, opencontent, external, question, opendata
                 postid={post.slug}
                 title={post.title} 
                 url={post.slug.current}
-                
+                tag={post.tag}
                 />
               ))}
             </div>  
@@ -124,19 +126,19 @@ export default function Home ({ posts, opencontent, external, question, opendata
 };
 
 export const getServerSideProps = async () => {
-  const query = `*[_type == "question" && tag =="openstandard"]{_id, title, body, slug, license, source}`
+  const query = `*[_type == "question" && tag =="openstandard"]{_id, title, body, slug, license, source, tag}`
   const posts = await sanityClient.fetch(query);
 
-  const opencontentquery = `*[_type == "question" && tag =="opencontent"]{_id, title, body, slug, license, source}`
+  const opencontentquery = `*[_type == "question" && tag =="opencontent"]{_id, title, body, slug, license, source, tag}`
   const opencontent = await sanityClient.fetch(opencontentquery);
 
-  const opendataquery = `*[_type == "question" && tag =="opendata"]{_id, title, body, slug, license, source}`
+  const opendataquery = `*[_type == "question" && tag =="opendata"]{_id, title, body, slug, license, source, tag}`
   const opendata = await sanityClient.fetch(opendataquery);
 
-  const externalresource = `*[_type == "externalresource" && tag =="external"]{_id, title, slug, description, url}`
+  const externalresource = `*[_type == "externalresource" && tag =="external"]{_id, title, slug, description, url, tag}`
   const external = await sanityClient.fetch(externalresource);
 
-  const faq = `*[_type == "question" && tag =="opensource"]{_id, title, slug, body, license, source}`
+  const faq = `*[_type == "question" && tag =="opensource"]{_id, title, slug, body, license, source, tag}`
   const question = await sanityClient.fetch(faq);
 
   return {

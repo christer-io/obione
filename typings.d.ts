@@ -10,5 +10,6 @@ export interface Post {
     license: string;
     source: string;
     github: string;
+    tag: string;
     
 }

@@ -105,6 +105,7 @@ export default function Home ({ posts, technical, external, question, stories  }
                 postid={post.slug}
                 title={post.title} 
                 url={post.slug.current}
+                tag={post.tag}
                 
                 />
               ))}
@@ -158,7 +159,7 @@ export const getServerSideProps = async () => {
   const externalresource = `*[_type == "externalresource" && tag =="external" && featured =="yes"]{_id, title, slug, description, url}`
   const external = await sanityClient.fetch(externalresource);
 
-  const faq = `*[_type == "question" && featured =="yes"]{_id, title, slug, body, license, source}`
+  const faq = `*[_type == "question" && featured =="yes"]{_id, title, slug, body, license, source, tag}`
   const question = await sanityClient.fetch(faq);
 
   const story = `*[_type == "story" && tag=="featured"]{_id, title, description, slug, body, url, mainImage}`

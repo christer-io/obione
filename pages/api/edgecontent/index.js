@@ -3,7 +3,7 @@ import { sanityClient, urlFor } from "../../../sanity";
 // import { NextRequest } from 'next/server'
 
 export default async function handler(req) {
-  const faq = `*[_type == "question"]{_id, title, slug, body, url}`
+  const faq = `*[_type == "question"]{_id, title, slug, body, url, tag}`
   const result = await sanityClient.fetch(faq);
   
   return new Response(
