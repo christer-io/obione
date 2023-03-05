@@ -14,7 +14,7 @@ function Questions({postid, url, title, tag}) {
               
             </div>
           </div>
-          <p className="text-sm text-left pl-5">{tag}</p>
+          <p className="text-sm text-left pl-5 text-darkdarkblue">#{tag}</p>
           <p className="text-lg pt-5 pr-4 pb-3 text-right">&rarr;</p> 
           
         </div>
