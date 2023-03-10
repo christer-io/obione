@@ -20,6 +20,7 @@ function Banner() {
                     <SearchIcon className="h-6 w-6 pr-1" />
                     Search FAQ     
               </a>  
+              
           </div>
       </div>
   </section>

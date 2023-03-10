@@ -39,7 +39,7 @@ export default function Home ({ question }: Props) {
       
       <section className='bg-white'>
           <div className='max-w-7xl mx-auto  text-3xl text-center font-sans text-darkdarkblue pt-9 ' >
-            <h2 className='pb-4'>Open Stories, projects and people </h2> 
+            <h2 className='pb-4'>Open stories, projects and people </h2> 
             
           <div/>
           <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-3 pl-3 pr-3 pt-5 pb-8">
