@@ -28,12 +28,9 @@ function Post({ post }: Props) {
             <h1 className="text-3xl mt-10 mb-3">
                {post.title} 
             </h1>
-            
             <div className="h-screen max-w-3xl mx-auto pb-9">
                 <iframe className="h-full w-full" src={`https://digitallibrary.io/wp-admin/admin-ajax.php?action=h5p_embed&id=${post.url}`}  title="Open source"></iframe> 
-             </div>
-
-            
+             </div>   
         </article>
 
        <Footermobile />

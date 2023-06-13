@@ -100,7 +100,6 @@ export default function Home ({ posts, technical, external, question, stories  }
                 title={post.title} 
                 url={post.slug.current}
                 tag={post.tag}
-                
                 />
               ))}
             </div>  
@@ -129,12 +128,9 @@ export default function Home ({ posts, technical, external, question, stories  }
             <div>
               <h3 className="text-center text-base text-darkdarkblue pb-2 hover:text-hover"> <a href="/externalresource/">Explore more external resources &rarr; </a></h3>
             </div>
-          </div>
-    
-         
+          </div>  
        </section>        
-            
-    
+             
     <BannerSmall part1="Open source is " part2="a development methodology" part3="and a social movement!" />
            
     </div>
