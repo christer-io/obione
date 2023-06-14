@@ -6,8 +6,8 @@ import Footer from '../components/Footer';
 import BannerSmall from '../components/BannerSmall'
 import SectionHeader from "../components/SectionHeader"
 import Header from "../components/Header"
+import Hero from "../components/Hero"
 import Banner from '../components/Banner';
-import Hero from '../components/Hero';
 import Plaincard from '../components/Plaincard';
 import { sanityClient, urlFor } from "../sanity";
 import { Post } from '../typings';
