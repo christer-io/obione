@@ -8,13 +8,12 @@ function Search() {
   const router = useRouter();
 
   const searching = async () => {   
-    const isTestroute = router.pathname.includes("testresults")
+    
     router.push({
-      pathname: isTestroute ? "/testresults/":"/results/",
+      pathname: "/results/",
       query: {
           searchinput: search
       } 
-
       });
   };
 
