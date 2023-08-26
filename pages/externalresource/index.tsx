@@ -14,6 +14,7 @@ import Questions from '../../components/Questions';
 import Path from '../../components/Path';
 
 import StandardButton from '../../components/StandardButton';
+import Footermobile from '../../components/Footermobile';
 
 
 interface Props {
@@ -58,7 +59,7 @@ export default function Home ({ question }: Props) {
             
           </div>
        </section>
-  
+       <Footermobile />
         
     </div>
     

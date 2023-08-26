@@ -65,7 +65,7 @@ export default function Home ({ posts, technical, external, question, stories  }
         ))}
       </div>
 
-      <Hero url="/post/opensource-license" buttontext="Learn more" title="Open source is all about the license" textpart2="Without the right open license it is not realy open source!"/> 
+      <Hero url="/post/the-commons-the-market" buttontext="Learn more" title="The New World of Digital Commons" textpart2="Longread about the The Commons, the Market, and the State."/> 
 
       <section className='bg-white'>
           <SectionHeader title="Stories of open" subtitle="People, projects and organisations that inspire"/>
