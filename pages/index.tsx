@@ -65,7 +65,7 @@ export default function Home ({ posts, technical, external, question, stories  }
         ))}
       </div>
 
-      <Hero url="/post/the-commons-the-market" buttontext="Learn more" title="The New World of Digital Commons" textpart2="Longread about the The Commons, the Market, and the State."/> 
+      <Hero img="osi" url="/post/the-commons-the-market" buttontext="Learn more" title="The New World of Digital Commons" textpart2="Longread about the The Commons, the Market, and the State."/> 
 
       <section className='bg-white'>
           <SectionHeader title="Stories of open" subtitle="People, projects and organisations that inspire"/>
@@ -88,6 +88,8 @@ export default function Home ({ posts, technical, external, question, stories  }
           </div>
           
        </section>
+       <Hero img="fix" url="/post/open-source-quiz" buttontext="Learn more" title="Take our new open source quiz!" textpart2="Test your knowledge of open with our interactive quiz."/> 
+
       <section className='bg-white'>
           <div className='max-w-7xl mx-auto text-3xl text-center font-sans text-darkdarkblue pt-9' >
             <SectionHeader title="FAQ" subtitle="Questions and answers intended to help you understand the open movement"/>

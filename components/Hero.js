@@ -1,6 +1,6 @@
 import Button from "../components/Button"
 
-function Hero({ title, textpart2, buttontext, url }) {
+function Hero({ title, textpart2, buttontext, url, img }) {
   return (
     <div>
         <section className="bg-white dark:bg-gray-900">
@@ -11,7 +11,7 @@ function Hero({ title, textpart2, buttontext, url }) {
                     <Button buttontext={buttontext} url={url}/>
                 </div>
                 <div className="hidden lg:mt-0 lg:col-span-5 lg:flex">
-                    <img src="/osi.png" alt="mockup" />
+                    <img src={`/${img}.png`} alt="mockup" />
                 </div>                
             </div>
         </section>
