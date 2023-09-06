@@ -1,5 +1,6 @@
 import { SearchCircleIcon, SearchIcon } from "@heroicons/react/solid"
 
+
 function Banner() {
     return (
       <div className='pb-8'>
